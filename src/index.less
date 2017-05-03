@@ -1,0 +1,86 @@
+@import (reference) "~bootstrap/less/variables";
+
+html, body {    
+    height: 100%;
+    min-height: 100%;
+}
+
+#app-root {
+    min-height: 100%;
+    padding: 0px;
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+#app-menu {
+    width: 280px;
+    flex-grow: 0;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    /*background-color: @navbar-inverse-bg;*/
+    /*border-color: @navbar-inverse-border;*/
+    &.app-menu-collapse {
+        width: 68px;
+        
+        #app-menu-header {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .navbar-brand {
+            display: none;
+        }
+        
+        #app-menu-cont {
+            text-align: center;
+            a span{
+                 display: none;
+            }
+           
+        }
+    }
+}
+
+#app-menu-header {
+    margin: 23px 35px;
+    float: none;
+    .navbar-brand {
+        font-size: 35px;
+        font-weight: bolder;
+    }
+    .icon-bar {
+        width: 16px;
+    }
+}
+
+/* 菜单区域 */
+#app-menu-cont {
+    .list-group {
+        margin-bottom: 0px;
+    }
+    
+    .list-group-item {
+        border-radius: 0px;
+        background-color: @navbar-inverse-bg;
+        border-color: @navbar-inverse-toggle-border-color;
+        /*剔除第一个顶线*/
+        &:first-child {
+            border-top: none;
+        }
+        
+        >span {
+            margin-left: 10px;
+        }
+    }
+    
+}
+
+#app-main {
+    min-width: 680px;
+    flex-grow: 1;
+}
+

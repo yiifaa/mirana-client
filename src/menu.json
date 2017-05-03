@@ -1,0 +1,17 @@
+[{
+    "title" : "安全概览",
+    "href" : "#",
+    "icon" : "fa-tachometer"
+}, {
+    "title" : "资产管理",
+    "href" : "#",
+    "icon" : "fa-desktop"
+}, {
+    "title" : "系统配置",
+    "href" : "#",
+    "icon" : "fa-cogs"
+}, {
+    "title" : "帮助",
+    "href" : "#",
+    "icon" : "fa-question-circle"
+}]

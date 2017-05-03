@@ -52,7 +52,7 @@ module.exports = {
                 loader: 'vue-loader'
             }, {
                 test: /\.json$/,
-                loader: 'json'
+                loader: 'json-loader'
             }, {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url',
@@ -69,7 +69,7 @@ module.exports = {
                 }
             }, {
                 test: /\.(html|tpl)$/,
-                loader: "html"
+                loader: "html-loader"
             }
         ]
     },   
@@ -79,6 +79,7 @@ module.exports = {
         alias: {
             jquery: 'jquery/dist/jquery.min.js',
             vue: 'vue/dist/vue.min.js'
+            //bootstrap: 'bootstrap'
         }
     }
 }

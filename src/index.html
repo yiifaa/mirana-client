@@ -1,0 +1,30 @@
+<div :class="contClass" id="app-root">
+  
+   <div id="app-menu" class="navbar navbar-inverse" :class="menuClass">
+       <div class="container-fluid">
+           <!-- 头部区域 -->
+           <div class="navbar-header" id="app-menu-header">
+               <a class="navbar-brand" href="#">STI</a>
+               <button type="button" class="navbar-toggle collapsed" style="display: block;margin-right: 0px;" @click="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+               </button>    
+            </div>  
+        </div>
+        <div id="app-menu-cont">
+             <div class="list-group">
+                  <a href="#" class="list-group-item" :class="{'active': menu.active}" :title="menu.title"
+                     v-for="menu in menus" @click="selectMenu(menu)">
+                      <i :class="menu.icon" class="fa" aria-hidden="true"></i>
+                      <span v-text="menu.title"></span>
+                  </a>                  
+            </div>
+        </div>              
+   </div>
+   
+   <div id="app-main">
+       <hello></hello>    
+   </div>
+</div>

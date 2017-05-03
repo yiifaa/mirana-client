@@ -5,7 +5,7 @@
     export default {
         data () {
             return {
-                message: 'Hi, A Huan!'
+                message: 'Hi, G Huan!'
             }
         }
         
