@@ -78,7 +78,8 @@ module.exports = {
         //extensions: ['', '.js', '.es6', '.vue'],
         alias: {
             jquery: 'jquery/dist/jquery.min.js',
-            vue: 'vue/dist/vue.min.js'
+            vue: 'vue/dist/vue.min.js',
+            router: 'vue-router/dist/vue-router.min.js'
             //bootstrap: 'bootstrap'
         }
     }
