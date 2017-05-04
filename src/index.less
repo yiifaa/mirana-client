@@ -1,19 +1,33 @@
 @import (reference) "~bootstrap/less/variables";
 
-html, body {    
+html, body,#app-root{    
     height: 100%;
     min-height: 100%;
+    padding: 0px;
 }
 
-#app-root {
-    min-height: 100%;
-    padding: 0px;
-   
+#app-small {
+    min-height: 100%;   
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
+}
+
+#app-big {   
+   min-height: 100%;
+   height: 100%;    
+   overflow: hidden;
+   position: relative;
+}
+
+/* 待优化与整合 */
+.app-big-screen {
+   min-height: 100%;
+   height: 100%;    
+   overflow: hidden;
+   position: relative;
 }
 
 #app-menu {
@@ -82,9 +96,19 @@ html, body {
 #app-main {
     min-width: 680px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+#app-main-content {
+    flex-grow: 1
 }
 
 #app-main-header {
     border-radius: 0px;
     border-left: none;
+    flex-grow: 0;
 }

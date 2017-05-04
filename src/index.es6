@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import I18nService from './services/I18nService.es6'
 import RouteService from './services/RouteService.es6'
+
 import template from './index.html'
 import './index.less'
 
@@ -22,26 +23,28 @@ import './index.less'
         data () {
             return {
                 message: 'Hello, World!',
-                //  是否全屏
-                full: true,
+                //  是否居中模式
+                center: false,
+                //  是否大屏模式
+                full: false,
                 //  是否收起菜单
                 toggled: false,
+                //  引入的菜单
                 menus,
+                //  当前选中的菜单项
                 current: null,
                 //  个人信息下拉菜单
-                opened: false,
-                //  当前视图
-                currentView: 'index'
+                opened: false                
             }
         },
-               
+                   
         computed: {
             /**
              *  容器样式
              * 
              */
             contClass () {
-                return this.full? 'container-fluid' : 'container'
+                return this.center? 'container' : 'container-fluid'
             },
             
             /**
@@ -77,6 +80,10 @@ import './index.less'
              */
             toggleAccount () {
                 this.opened = !this.opened;
+            },
+            
+            toggleTheme () {
+                this.full = !this.full;
             }
         }
     })
