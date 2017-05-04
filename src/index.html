@@ -16,7 +16,7 @@
             </div>
             <div id="app-menu-cont">
                  <div class="list-group">
-                      <a href="javascript:void(0)" class="list-group-item" :class="{'active': menu.active}" :title="menu.title"
+                      <a :href="menu.href" class="list-group-item" :class="{'active': menu.active}" :title="menu.title"
                          v-for="menu in menus" @click="selectMenu(menu)">
                           <i :class="menu.icon" class="fa" aria-hidden="true"></i>
                           <span v-text="menu.title"></span>
@@ -56,9 +56,23 @@
                   </ul>              
               </div>
           </nav>
-          <div class="container-fluid" id="app-main-content">
-             <router-link to="/index">Go to Foo</router-link>  
-             <router-view></router-view>
+          <div id="app-main-content">
+            <!-- 导航 -->
+            <!--
+            <ol class="breadcrumb" style="background:none;">
+              <li><a href="#">主页</a></li>
+              <li><a href="#">系统配置</a></li>
+              <li class="active">人员</li>
+            </ol>
+            -->
+            <div class="container-fluid">
+                <div class="page-header" style="margin:15px 0px;padding-bottom:1px;">
+                  <h3 style="margin-top: 10px;">安全概览<small style="margin-left:15px;font-size:12px;">系统人员管理</small></h3>
+                </div> 
+                <router-view>
+                </router-view>
+            </div>
+            
           </div>
        </div>
    </div>

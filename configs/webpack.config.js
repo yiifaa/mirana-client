@@ -79,7 +79,13 @@ module.exports = {
         alias: {
             jquery: 'jquery/dist/jquery.min.js',
             vue: 'vue/dist/vue.min.js',
-            router: 'vue-router/dist/vue-router.min.js'
+            'vue-router': 'vue-router/dist/vue-router.min.js',
+            'vue-i18n': 'vue-i18n/dist/vue-i18n.min.js',
+            // 内置模块
+            'apps': path.resolve(__dirname, '../src/apps'),
+            'plugins': path.resolve(__dirname, '../src/plugins'),
+            'components': path.resolve(__dirname, '../src/components'),
+            'services': path.resolve(__dirname, '../src/services')            
             //bootstrap: 'bootstrap'
         }
     }

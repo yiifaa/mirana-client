@@ -1,0 +1,14 @@
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th style="width:120px;">字段名称</th>
+            <th style="width:400px;">值</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="item in items">
+            <td v-text="item.name"></td>
+            <td v-html="item.value"></td>
+        </tr>
+    </tbody>
+</table>

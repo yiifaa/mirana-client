@@ -2,9 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import menus from './menu/total.json'
 //  引入组件
-import hello from '../components/Hello.vue'
+import hello from 'components/Hello.vue'
+import home from 'apps/home/index.es6'
 
+ 
+//  注册组件与地址映射
+const routes = [{
+    path: '/index', component: hello
+},{
+    path: '/home', component: home
+}]
 
+//  激活路由器
 Vue.use(VueRouter)
 const RouteService = {
     
@@ -13,11 +22,7 @@ const RouteService = {
         menus.forEach(item => {
             item.active = false
         })
-        
-        //  注册组件与地址映射
-        const routes = [{
-            path: '/index', component: hello
-        }]
+       
         
         //  注册路由器
         const router = new VueRouter({

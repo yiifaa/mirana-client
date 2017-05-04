@@ -5,7 +5,6 @@
           <p>This is a simple modal.</p>
         </modal>
         <h1 v-text="$t('commons.title')"></h1>
-        <h2 v-text="message"></h2>
         <div style="height:80%;background-color:yellow;">
             123
         </div>
