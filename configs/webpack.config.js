@@ -85,7 +85,8 @@ module.exports = {
             'apps': path.resolve(__dirname, '../src/apps'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'components': path.resolve(__dirname, '../src/components'),
-            'services': path.resolve(__dirname, '../src/services')            
+            'services': path.resolve(__dirname, '../src/services'),
+            'xStore': path.resolve(__dirname, '../src/xStore')
             //bootstrap: 'bootstrap'
         }
     }

@@ -84,5 +84,10 @@
        <router-view></router-view>
    </div>
    
-   <!-- 辅助区域 -->     
+   <!-- 辅助区域 -->
+   <div id="app-alarms">
+       <alert :duration="messages.duration" :type="messages.status">
+           <div v-html="messages.text"></div>
+       </alert>
+   </div>     
 </div>

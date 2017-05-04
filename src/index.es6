@@ -1,10 +1,14 @@
 import Vue from 'vue'
-import I18nService from './services/I18nService.es6'
-import RouteService from './services/RouteService.es6'
+import { store } from 'xStore/xStore.es6'
+import { MESSAGE } from 'xStore/xType.es6'
+import I18nService from 'services/I18nService.es6'
+import RouteService from 'services/RouteService.es6'
+import {Collapse, Alert} from 'uiv'
 
 import template from './index.html'
 import './index.less'
 
+//console.log(MESSAGE)
 //  匿名初始化
 (function() {
     let i18n = I18nService.init(),
@@ -12,17 +16,18 @@ import './index.less'
     
     new Vue({
         
-        router,
+        el: '#app-root',
         
         i18n,
         
-        el: '#app-root',
+        router,
+        
+        store,
         
         template,      
         
         data () {
             return {
-                message: 'Hello, World!',
                 //  是否居中模式
                 center: false,
                 //  是否大屏模式
@@ -52,9 +57,21 @@ import './index.less'
              */
             menuClass () {
                 return this.toggled? 'app-menu-collapse' : ''
+            },
+            
+            /**
+              * 返回的消息
+              */
+            messages () {
+                return this.$store.state.message
             }
         },
         
+        components: {
+            Collapse,
+            Alert
+        },
+                
         created () {
             this.selectMenu(this.menus[0])    
         },
@@ -84,6 +101,10 @@ import './index.less'
             
             toggleTheme () {
                 this.full = !this.full;
+            },
+            
+            removeMsg (msg) {
+                this.$store.commit(MESSAGE, msg)
             }
         }
     })
