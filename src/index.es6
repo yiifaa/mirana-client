@@ -5,15 +5,19 @@ import { MESSAGE } from 'xStore/xType.es6'
 import I18nService from 'services/I18nService.es6'
 import RouteService from 'services/RouteService.es6'
 import { alert } from 'components/vue-strap'
+import HtmlPlugin from 'plugins/HtmlPlugin.es6'
 
 import template from './index.html'
 import './index.less'
+
 
 //console.log(MESSAGE)
 //  匿名初始化
 (function() {
     let i18n = I18nService.init(),
         {menus, router} = RouteService.init()
+    
+    Vue.use(HtmlPlugin)
     
     new Vue({
         

@@ -1,7 +1,32 @@
-<div>
-    <jq-grid url="/static/datas/jqgrid.json" col-size="3" :sub-grid="true">
-        <jq-col label="分类名称" name="CategoryName" width="75"></jq-col>
-        <jq-col label="产品名称" name="CategoryName" width="90"></jq-col>
-        <jq-col label="价格" name="Price" width="90" align="right"></jq-col>
-    </jq-grid>
+<div class="sti-list-page">
+   <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <div class="navbar-form navbar-left">
+             <div class="class form-group">
+                 <button class="btn btn-default">新增</button>
+             </div> 
+          </div>
+      
+            <div class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="查询分类">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                    </div>
+                    
+              </div>
+            </div>
+            
+            
+      </div> 
+   </nav>
+   <jq-grid url="/static/datas/jqgrid.json" col-size="3" :sub-grid="true">
+       <jq-col label="分类名称" name="CategoryName" width="75"></jq-col>
+       <jq-col label="产品名称" name="CategoryName" width="90"></jq-col>
+       <jq-col label="价格" name="Price" width="90" align="right"></jq-col>
+   </jq-grid>
 </div>

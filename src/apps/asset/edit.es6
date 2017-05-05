@@ -5,6 +5,12 @@ export default {
     
     template,
     
+    data () {
+        return {
+            disabled : true
+        }    
+    },
+    
     components: {
         validator,
         validRule
