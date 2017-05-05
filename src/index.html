@@ -67,7 +67,7 @@
             -->
             <div class="container-fluid">
                 <div class="page-header" style="margin:15px 0px;padding-bottom:1px;">
-                  <h3 style="margin-top: 10px;">安全概览<small style="margin-left:15px;font-size:12px;">系统人员管理</small></h3>
+                  <h3 style="margin-top: 10px;"><strong>安全概览</strong><small style="margin-left:15px;font-size:12px;">系统人员管理</small></h3>
                 </div> 
                 <router-view>
                 </router-view>
@@ -86,8 +86,11 @@
    
    <!-- 辅助区域 -->
    <div id="app-alarms">
-       <alert :duration="messages.duration" :type="messages.status">
-           <div v-html="messages.text"></div>
-       </alert>
+      <template v-for="ms in messageQueue" >
+         <alert v-if="ms.show" :type="ms.status" width="100%" :model="ms" :key="ms.id"
+                :value="ms.show" :dismissable="true" :duration="ms.duration" :close="remove">
+             <p v-html="ms.text"></p>
+         </alert>
+      </template>
    </div>     
 </div>

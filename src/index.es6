@@ -1,9 +1,10 @@
 import Vue from 'vue'
+import _ from 'lodash'
 import { store } from 'xStore/xStore.es6'
 import { MESSAGE } from 'xStore/xType.es6'
 import I18nService from 'services/I18nService.es6'
 import RouteService from 'services/RouteService.es6'
-import {Collapse, Alert} from 'uiv'
+import { alert } from 'components/vue-strap'
 
 import template from './index.html'
 import './index.less'
@@ -39,7 +40,11 @@ import './index.less'
                 //  当前选中的菜单项
                 current: null,
                 //  个人信息下拉菜单
-                opened: false                
+                opened: false,
+                
+                show: true,
+                
+                messageQueue: []
             }
         },
                    
@@ -62,14 +67,23 @@ import './index.less'
             /**
               * 返回的消息
               */
-            messages () {
+            message () {
                 return this.$store.state.message
             }
         },
         
+        watch: {
+            //  必须通过深度监控，才能检测到它的变化，但它的值始终未变
+            message : {
+                handler: function(val) { 
+                   this.messageQueue.push(_.clone(this.message, true))                   
+                },
+                deep: true
+            }
+        },
+        
         components: {
-            Collapse,
-            Alert
+            alert
         },
                 
         created () {
@@ -103,8 +117,13 @@ import './index.less'
                 this.full = !this.full;
             },
             
-            removeMsg (msg) {
-                this.$store.commit(MESSAGE, msg)
+            remove (ms) {
+                let index = _.indexOf(this.messageQueue, ms)
+                if(index > -1) {
+                    //  销毁组件
+                    ms.show = false
+                    this.messageQueue.splice(index, 1)
+                }
             }
         }
     })

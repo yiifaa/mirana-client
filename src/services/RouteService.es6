@@ -4,6 +4,7 @@ import menus from './menu/total.json'
 //  引入组件
 import hello from 'components/Hello.vue'
 import home from 'apps/home/index.es6'
+import asset from 'apps/asset/edit.es6'
 
  
 //  注册组件与地址映射
@@ -11,6 +12,8 @@ const routes = [{
     path: '/index', component: hello
 },{
     path: '/home', component: home
+},{
+    path: '/asset', component: asset
 }]
 
 //  激活路由器

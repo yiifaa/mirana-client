@@ -8,7 +8,7 @@
     "icon" : "fa-desktop"
 }, {
     "title" : "系统配置",
-    "href" : "#",
+    "href" : "#/asset",
     "icon" : "fa-cogs"
 }, {
     "title" : "帮助",
