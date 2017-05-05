@@ -1,23 +1,26 @@
 <div class="sti-form-page">
     <div class="sti-form">
-        <form class="form-horizontal">
-            <div class="form-group sti-form-field">
-                <label for="username" class="col-xs-3 control-label">用户</label>
-                <div class="col-xs-6">
-                      <input type="email" class="form-control" id="username" placeholder="用户">
+       <validator form="#accountForm" ref="validator">
+            <form class="form-horizontal" id="accountForm" @submit.prevent="save">
+                <div class="form-group sti-form-group">
+                    <label for="username" class="col-xs-3 control-label">用户</label>
+                    <div class="col-xs-6 sti-form-field">
+                          <input type="email" class="form-control" required id="username" placeholder="用户">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group sti-form-field">
-                <label for="username" class="col-xs-3 control-label">用户</label>
-                <div class="col-xs-6">
-                      <input type="email" class="form-control" id="username" placeholder="用户">                      
+                <div class="form-group sti-form-group">
+                    <label for="password" class="col-xs-3 control-label">密码</label>
+                    <div class="col-xs-6 sti-form-field">
+                          <input type="text" class="form-control" id="password" name="password" placeholder="密码">
+                          <valid-rule valid-for="password" name="ipv4" message="请输入合法的IP地址"></valid-rule>                  
+                    </div>
                 </div>
-            </div>
-            <div class="form-group sti-form-buttons">
-                <div class="col-xs-offset-3 col-xs-6">
-                    <button class="btn btn-primary">保存</button>
-                </div>
-            </div>          
-        </form>        
+                <div class="form-group sti-form-buttons">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <button class="btn btn-primary">保存</button>
+                    </div>
+                </div>          
+            </form>
+        </validator>        
     </div>    
 </div>
