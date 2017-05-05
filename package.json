@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "echarts": "^3.5.4",
     "font-awesome": "^4.7.0",
     "jqGrid": "^5.1.1",
     "jquery": "^3.2.1",

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import _ from 'lodash'
 import { store } from 'xStore/xStore.es6'
-import { MESSAGE } from 'xStore/xType.es6'
+import { MESSAGE, THEME } from 'xStore/xType.es6'
 import I18nService from 'services/I18nService.es6'
 import RouteService from 'services/RouteService.es6'
 import { alert } from 'components/vue-strap'
@@ -83,6 +83,14 @@ import './index.less'
                    this.messageQueue.push(_.clone(this.message, true))                   
                 },
                 deep: true
+            },
+            
+            full (val) {
+                if(val) {
+                    this.$store.commit(THEME, {theme:'dark'})
+                } else {
+                    this.$store.commit(THEME, {theme:'blue'})                   
+                }
             }
         },
         

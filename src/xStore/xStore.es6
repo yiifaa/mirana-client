@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import { MESSAGE } from './xType.es6'
+import { MESSAGE, THEME } from './xType.es6'
 import UuidService from 'services/UuidService.es6'
 
 Vue.use(Vuex)
@@ -25,7 +25,9 @@ const store = new Vuex.Store({
             duration: DURATION,
             show: true,
             id: '-1'
-        }
+        },
+        
+        theme: 'blue'
     },
     
     mutations: {
@@ -44,6 +46,14 @@ const store = new Vuex.Store({
            state.message.show = true
            state.message.duration = duration
            state.message.id = UuidService.uuid()
+        },
+        
+        /**
+         * 
+         * 更换主题
+         */
+        [THEME] (state, payload) {
+            state.theme = payload.theme
         }
     }
 })
