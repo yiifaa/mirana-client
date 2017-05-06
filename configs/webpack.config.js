@@ -7,7 +7,7 @@ var path = require('path'),
 module.exports = {
     
     entry : {
-        main: './src/index.es6'
+        main: './src/main.es6'
     },
     
     devtool: '#source-map',
@@ -43,8 +43,20 @@ module.exports = {
                 loader: "style-loader!css-loader"
             }, {
                 test: /\.scss$/,
-                loader: "style!css!sass"
-            }, {
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader?sourceMap"
+                }, {
+                    loader: "sass-loader?sourceMap",
+                    options: {
+                        //  includePaths: ["absolute/path/a", "absolute/path/b"]
+                        sourceMap: true,
+                        sourceMapContents: true,
+                        sourceMapEmbed: true
+                    }
+                }]
+        }, {
                 test: /\.less$/,
                 loader: "style-loader!css-loader!less-loader"
             }, {
@@ -55,14 +67,14 @@ module.exports = {
                 loader: 'json-loader'
             }, {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url',
+                loader: 'url-loader',
                 query: {
                     limit: 10000,
                     name: 'img/[name].[hash:7].[ext]'
                 }
             }, {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url',
+                loader: 'url-loader',
                 query: {
                     limit: 10000,
                     name: 'fonts/[name].[hash:7].[ext]'
@@ -82,7 +94,10 @@ module.exports = {
             'vue-router': 'vue-router/dist/vue-router.min.js',
             'vue-i18n': 'vue-i18n/dist/vue-i18n.min.js',
             'echarts': 'echarts/dist/echarts.min.js',
+			'styles': path.resolve(__dirname, '../styles'),
+				
             // 内置模块
+			'@': path.resolve(__dirname, '../src/'),
             'apps': path.resolve(__dirname, '../src/apps'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'components': path.resolve(__dirname, '../src/components'),
