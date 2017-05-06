@@ -1,49 +1,41 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import commons from './i18n/commons.es6'
+import messages from 'configs/i18n.es6'
 import $ from 'jquery'
 
-//  注册国际化文件
-const messages = {
-    zh: {
-        commons: commons.zh
-    }    
-}
-
-const locale = 'zh'
-/**
- * 获取资源信息，格式针对于　{'sti.buttons' : ['args']}
- * @param key
- * @returns {String}
- */
-let getMessage = function(key) {
-    let args = null,
-        k	= key
-    if($.type(key) === 'object') {
-        k = Object.keys(key)[0]
-        args = key[k]
-    }
-    return Vue.t(k, locale, args)
-    //  return Vue.message(k, args)
-}
 
 //  启动国际化服务，勿修改
 Vue.use(VueI18n)
+const locale = 'zh'
+
 const I18nService = {
     
-    init () {
-        this.installDirective()
-        this.installComponent()
-        
+    init () {    
         //  初始化I18n
         const i18n = new VueI18n({
-            locale: 'zh',
+            locale,
             messages
         })
         return i18n
     },
     
-    installDirective() {
+    install(vm) {
+        
+        /**
+         * 获取资源信息，格式针对于　{'sti.buttons' : ['args']}
+         * @param key
+         * @returns {String}
+         */
+        let getMessage = function(key) {
+            let args = null,
+                k	= key
+            if($.type(key) === 'object') {
+                k = Object.keys(key)[0]
+                args = key[k]
+            }
+            return vm.$t(k, args)
+            //  return Vue.message(k, args)
+        }
           /**
          * 添加message指令，根据参数自动添加上下文指令
          */
@@ -69,12 +61,7 @@ const I18nService = {
             }
 
         })
-    },
-    
-    /**
-     * 安装组件
-     */
-    installComponent () {
+        
         let template = '<span v-html="message"></span>'
         Vue.component('message', {
 
@@ -96,6 +83,7 @@ const I18nService = {
                 }
             }
         })
+        
     }
 }
 

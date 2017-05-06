@@ -51,7 +51,7 @@
               </dropdown>
             </div>
             <h4 class="mb-0">9.823</h4>
-            <p>Members online</p>
+            <p v-message="'commons.title'"></p>
           </div>
           <card-line3-chart-example class="chart-wrapper" style="height:70px;" height="70"/>
         </div>

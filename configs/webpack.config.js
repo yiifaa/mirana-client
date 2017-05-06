@@ -9,20 +9,21 @@ module.exports = {
     entry : {
         main: './src/main.es6'
     },
-    
-    devtool: '#source-map',
+   
     
     output : {
         filename : '[name].js',
-        publicPath: "/build/",
+        publicPath: "/dist/",
         path : build,
         //  umd包含了对amd、commonjs、var等多种规范的支持  
         libraryTarget : 'var'  
-    },
+    },    
+     
+    devtool: '#source-map',
     
     devServer: {
         inline: true    
-    },
+    },   
     
     module: {
         loaders: [
@@ -31,13 +32,7 @@ module.exports = {
                 test: /\.es6$/,                
                 include: src,
                 exclude: /(node_modules|build)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env'],
-                        plugins: ['transform-runtime']
-                    }
-                }
+                loader: 'babel-loader'
             }, {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
@@ -103,7 +98,10 @@ module.exports = {
             'components': path.resolve(__dirname, '../src/components'),
             'services': path.resolve(__dirname, '../src/services'),
             'xStore': path.resolve(__dirname, '../src/xStore'),
-            'themes': path.resolve(__dirname, '../src/themes')
+            'themes': path.resolve(__dirname, '../src/themes'),
+            'i18n': path.resolve(__dirname, '../src/i18n'),
+            'configs': path.resolve(__dirname, '../src/configs'),
+            'utils': path.resolve(__dirname, '../src/utils')
             //bootstrap: 'bootstrap'
         }
     }
