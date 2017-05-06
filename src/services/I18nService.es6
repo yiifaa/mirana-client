@@ -62,6 +62,16 @@ const I18nService = {
 
         })
         
+        Vue.directive('title', {
+
+            bind (el, binding) {
+                let value = binding.value,
+                    message = getMessage(value)
+                $(el).attr('title', message)
+            }
+
+        })
+        
         let template = '<span v-html="message"></span>'
         Vue.component('message', {
 
@@ -73,7 +83,7 @@ const I18nService = {
                     required : true
                 }
             },
-
+            
             /**
              * 需要改进
              */

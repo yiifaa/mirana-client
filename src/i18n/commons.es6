@@ -6,13 +6,22 @@ export default {
         users: '在线用户',
         account: '账号',
         password: '密码',
+        profile: '简介',
+        
+        task: '任务',
+        message: '消息',
+        comments: '评论',
+        system: '系统健康状况',
         
         //
         buttons: {
             save: "保存",
             cancel: "取消",
             login: '登陆',
-            register: '立即注册'
+            register: '立即注册',
+            logout: '注销',
+            lock: '锁定账户',
+            update: '更新',
         },
         
         login: {
