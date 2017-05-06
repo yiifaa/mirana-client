@@ -1,19 +1,19 @@
 <template>
   <navbar>
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button" @click="mobileSidebarToggle">&#9776;</button>
-    <a class="navbar-brand" href="#">STI</a>
+    <a class="navbar-brand" href="#" v-message="'commons.title'"></a>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item">
         <a class="nav-link navbar-toggler sidebar-toggler" href="#" @click="sidebarMinimize">&#9776;</a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="#">Dashboard</a>
+        <a class="nav-link" href="#" v-message="'commons.dashboard'"></a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="#">Users</a>
+        <a class="nav-link" href="#" v-message="'commons.users'"></a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="#">Settings</a>
+        <a class="nav-link" href="#" v-message="'commons.settings'"></a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -31,9 +31,10 @@
           <img src="static/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
           <span class="d-md-down-none">admin</span>
         </span>
+        
         <div slot="dropdown-menu"class="dropdown-menu dropdown-menu-right">
 
-          <div class="dropdown-header text-center"><strong>Account</strong></div>
+          <div class="dropdown-header text-center"><strong v-message="'commons.account'"></strong></div>
 
           <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a>
           <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a>
@@ -60,7 +61,7 @@
 <script>
 
 import navbar from './Navbar.vue'
-import { dropdown } from 'vue-strap'
+import { dropdown } from 'components/vue-strap'
 
 export default {
   name: 'header',
