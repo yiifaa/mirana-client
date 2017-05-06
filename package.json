@@ -51,7 +51,6 @@
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
     "chart.js": "2.5.0",
-    "vue-chartjs": "2.6.1",
-    "vue-strap": "github:wffranco/vue-strap"
+    "vue-chartjs": "2.6.1"
   }
 }
