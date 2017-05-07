@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import routes from 'configs/routes/index.es6'
+import { routes, menus } from 'configs/routes/index.es6'
 
 Vue.use(Router)
 export default {
@@ -15,6 +15,10 @@ export default {
               routes
         })
         return router
+    },
+    
+    menus () {
+        return menus
     }
     
 }

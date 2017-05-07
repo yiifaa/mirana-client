@@ -4,22 +4,26 @@ import SimpleLineIcons from '@/views/icons/SimpleLineIcons.vue'
 
 export default  {
     path: 'icons',
+    
     redirect: '/icons/font-awesome',
-    name: 'Icons',
+    
+    name: '图标',
+    
     component: {
         render(c) {
             return c('router-view')
         }
     },
+    
     children: [
         {
             path: 'font-awesome',
-            name: 'Font Awesome',
+            name: '字体图标',
             component: FontAwesome
     },
         {
             path: 'simple-line-icons',
-            name: 'Simple Line Icons',
+            name: '简单图标',
             component: SimpleLineIcons
     }
   ]

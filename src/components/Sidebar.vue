@@ -13,23 +13,26 @@
                 
         <template v-for="menu in menus">
             <li class="nav-item nav-dropdown" v-if="menu.children && menu.children.length > 0">
-                <a class="nav-link nav-dropdown-toggle" href="#" @click="handleClick">
-                    <i class="icon-star"></i>
-                    {{menu.text}}
+                <a class="nav-link nav-dropdown-toggle" href="javascript:void(0)" @click="handleClick">
+                    <i :class="menu.icon" v-if="menu.icon"></i>
+                    <i class="icon-star" v-else></i>
+                    {{menu.name}}
                     <span class="badge badge-info" v-if="menu.news" v-message="'commons.news'"></span>
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item" v-for="child in menu.children">
-                      <router-link :to="child.href" class="nav-link" exact>
-                          <i class="icon-star"></i> {{child.text}}
+                      <router-link :to="child.path" class="nav-link" exact>
+                          <i :class="child.icon" v-if="child.icon"></i>
+                          <i class="icon-star" v-else></i>
+                          {{child.name}}
                           <span class="badge badge-info" v-if="child.news" v-message="'commons.news'"></span>
                       </router-link>
                     </li>
                 </ul>
             </li>
             <li class="nav-item" v-else>
-              <router-link :to="menu.href" class="nav-link" exact>
-                  <i class="icon-puzzle"></i> {{menu.text}}
+              <router-link :to="menu.path" class="nav-link" exact>
+                  <i :class="menu.icon"></i> {{menu.name}}
                   <span class="badge badge-info" v-if="menu.news" v-message="'commons.news'"></span>
               </router-link>
             </li>   
@@ -39,25 +42,25 @@
     </nav>
   </div>
 </template>
+
 <script>
-import menuService from 'configs/menus/index.es6'
-console.log(menuService)
+import { menus } from 'configs/routes/index.es6'
+
 export default {
     
-  name: 'sidebar',
+    name: 'sidebar',
     
     data () {
-        let menus = menuService.menus()
         return { menus }
     },
     
-  methods: {
-    handleClick (e) {
-      e.preventDefault()
-      e.target.parentElement.classList.toggle('open')
+    methods: {
+        handleClick (e) {
+            e.preventDefault()
+            e.target.parentElement.classList.toggle('open')
+        }
     }
-  }
-    
+
 }
 </script>
 
@@ -65,4 +68,5 @@ export default {
   .nav-link {
     cursor:pointer;
   }
+ 
 </style>

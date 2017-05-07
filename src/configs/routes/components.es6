@@ -10,7 +10,8 @@ import Tables from '@/views/components/Tables.vue'
 export default {
     path: 'components',
     redirect: '/components/buttons',
-    name: 'Components',
+    icon: 'fa fa-cubes',
+    name: '通用控件',
     component: {
         render(c) {
             return c('router-view')
@@ -19,17 +20,17 @@ export default {
     children: [
         {
             path: 'buttons',
-            name: 'Buttons',
+            name: '按钮',
             component: Buttons
     },
         {
             path: 'social-buttons',
-            name: 'Social Buttons',
+            name: '社交按钮',
             component: SocialButtons
     },
         {
             path: 'cards',
-            name: 'Cards',
+            name: '卡片',
             component: Cards
     },
         {
@@ -39,17 +40,17 @@ export default {
     },
         {
             path: 'modals',
-            name: 'Modals',
+            name: '模式框',
             component: Modals
     },
         {
             path: 'switches',
-            name: 'Switches',
+            name: '切换按钮',
             component: Switches
     },
         {
             path: 'tables',
-            name: 'Tables',
+            name: '表格',
             component: Tables
     }
   ]

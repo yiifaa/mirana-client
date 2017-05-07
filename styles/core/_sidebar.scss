@@ -95,6 +95,13 @@
           padding: 0;
           list-style: none;
         }
+          
+        /*嵌套菜单*/
+          .nav-item {
+              .nav-link {
+                  padding-left: 44px;
+              }
+          }  
       }
 
       .nav-link {
@@ -105,8 +112,8 @@
         background: $sidebar-nav-link-bg;
         @include borders($sidebar-nav-link-borders);
         @if $enable-sidebar-nav-rounded {
-          border-radius: $border-radius;
-        }
+              border-radius: $border-radius;
+            }
 
         &:hover {
           color: $sidebar-nav-link-hover-color !important;
@@ -313,7 +320,7 @@
 
           ul {
             background: $sidebar-bg;
-          }
+          } 
 
           .nav-link {
             position: relative;
