@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import { routes, menus } from 'configs/routes/index.es6'
+import { routes } from 'configs/routes/index.es6'
 
 Vue.use(Router)
 export default {
     
     init () {
+        console.log(routes)
         let router = new Router({
               //    适用于在线
               mode: 'hash',
@@ -15,10 +16,6 @@ export default {
               routes
         })
         return router
-    },
-    
-    menus () {
-        return menus
     }
     
 }

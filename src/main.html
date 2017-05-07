@@ -1,17 +1,20 @@
 <!--
-<div class="app">
-    <AppHeader/>
-        <div class="app-body">
-            <Sidebar/>
-                <main class="main">
-                    <breadcrumb :list="list"/>
-                    <div class="container-fluid">
-                        <router-view></router-view>
-                    </div>
-                </main>
-            <AppAside/>
-        </div>
-    <AppFooter/>
+<div class="container-fluid" style="padding:0px;">
+    <div class="app">
+        <AppHeader/>
+            <div class="app-body">
+                <Sidebar/>
+                    <main class="main">
+                        <breadcrumb :list="list"/>
+                        
+                        <div class="container-fluid">
+                            <router-view></router-view>
+                        </div>
+                    </main>
+                <AppAside/>
+            </div>
+        <AppFooter/>
+    </div>    
 </div>
 -->
 <router-view></router-view>

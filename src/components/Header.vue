@@ -43,7 +43,7 @@
               <strong v-message="'commons.account'"></strong>
           </div>
 
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="#" @click="sendMessage">
               <i class="fa fa-bell-o"></i>
               <message keys="commons.buttons.update"/>
               <span class="badge badge-info">42</span>
@@ -101,6 +101,7 @@
 
 import navbar from './Navbar.vue'
 import { dropdown } from 'components/vue-strap'
+import { MESSAGE } from 'xStore/xType.es6'
 import $ from 'jquery'
 
 export default {
@@ -112,6 +113,10 @@ export default {
   },
     
   methods: {
+      
+    sendMessage () {
+       this.$store.commit(MESSAGE, {status:'success', text:'操作成功了！'}) 
+    },  
       
     click () {
       // do nothing

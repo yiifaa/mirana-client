@@ -6,6 +6,7 @@ import Forms from '@/views/components/Forms.vue'
 import Modals from '@/views/components/Modals.vue'
 import Switches from '@/views/components/Switches.vue'
 import Tables from '@/views/components/Tables.vue'
+import Grids from '@/views/components/Grids.es6'
 
 export default {
     path: 'components',
@@ -35,7 +36,7 @@ export default {
     },
         {
             path: 'forms',
-            name: 'Forms',
+            name: '表单',
             component: Forms
     },
         {
@@ -52,6 +53,11 @@ export default {
             path: 'tables',
             name: '表格',
             component: Tables
+    },
+        {
+            path: 'grids',
+            name: '复合列表',
+            component: Grids
     }
   ]
 }
