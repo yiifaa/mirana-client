@@ -802,7 +802,7 @@ import CardBarChartExample from './dashboard/CardBarChartExample.vue'
 import MainChartExample from './dashboard/MainChartExample.vue'
 import SocialBoxChartExample from './dashboard/SocialBoxChartExample.vue'
 
-import { dropdown } from 'vue-strap'
+import { dropdown } from 'components/vue-strap'
 
 export default {
   name: 'dashboard',

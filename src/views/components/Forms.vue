@@ -980,7 +980,7 @@
 
 <script>
 
-import { dropdown } from 'vue-strap'
+import { dropdown } from 'components/vue-strap'
 
 export default {
   name: 'fomrs',
