@@ -12,6 +12,21 @@ export default {
         message: '消息',
         comments: '评论',
         system: '系统健康状况',
+        site: 'http://stixu.com',
+        
+        //  右侧面板
+        alarm: '告警提醒',
+        alarmDesc: '系统会持续监控告警的变化，当新告警产生时，会自动显示在窗口右上角，并提醒用户进行处理。',
+        audit: '操作审计',
+        auditDesc: '开启此功能后，系统会监控用户的每次操作，并将操作结果计入后台数据库，并支持查询与分析。',
+        autoUpdate: '自动更新',
+        themes: '默认主题',
+        systemUtil: '系统自身监控',
+        cpu: 'CPU利用率',
+        memory: '内存利用率',
+        on: '开',
+        off: '关',
+        news: '新',
         
         //
         buttons: {
@@ -21,7 +36,7 @@ export default {
             register: '立即注册',
             logout: '注销',
             lock: '锁定账户',
-            update: '更新',
+            update: '更新'            
         },
         
         login: {

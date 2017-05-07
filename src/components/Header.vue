@@ -1,10 +1,10 @@
 <template>
   <navbar>
-    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button" @click="mobileSidebarToggle">&#9776;</button>
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button" @click.prevent="mobileSidebarToggle">&#9776;</button>
     <a class="navbar-brand" href="#" v-message="'commons.title'"></a>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item">
-        <a class="nav-link navbar-toggler sidebar-toggler" href="#" @click="sidebarMinimize">&#9776;</a>
+        <a class="nav-link navbar-toggler sidebar-toggler" href="#" @click.prevent="sidebarMinimize">&#9776;</a>
       </li>
       <li class="nav-item px-3">
         <a class="nav-link" href="#" v-message="'commons.dashboard'"></a>
@@ -18,7 +18,9 @@
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item d-md-down-none">
-        <a class="nav-link" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+        <a class="nav-link" href="#">
+        <i class="icon-bell"></i>
+        <span class="badge badge-pill badge-danger">5</span></a>
       </li>
       <!--
       <li class="nav-item d-md-down-none">
@@ -37,7 +39,9 @@
         
         <div slot="dropdown-menu"class="dropdown-menu dropdown-menu-right">
 
-          <div class="dropdown-header text-center"><strong v-message="'commons.account'"></strong></div>
+          <div class="dropdown-header text-center">
+              <strong v-message="'commons.account'"></strong>
+          </div>
 
           <a class="dropdown-item" href="#">
               <i class="fa fa-bell-o"></i>
@@ -88,7 +92,7 @@
       </dropdown>
       <li class="nav-item d-md-down-none">
         <a class="nav-link navbar-toggler aside-menu-toggler" 
-        href="javascript:void(0)" @click="asideToggle">&#9776;</a>
+        href="javascript:void(0)" @click.prevent="asideToggle">&#9776;</a>
       </li>
     </ul>
   </navbar>
@@ -97,32 +101,44 @@
 
 import navbar from './Navbar.vue'
 import { dropdown } from 'components/vue-strap'
+import $ from 'jquery'
 
 export default {
   name: 'header',
+    
   components: {
     navbar,
     dropdown
   },
+    
   methods: {
+      
     click () {
       // do nothing
     },
+      
     sidebarToggle (e) {
-      e.preventDefault()
-      document.body.classList.toggle('sidebar-hidden')
+        e.preventDefault()
+        document.body.classList.toggle('sidebar-hidden')
+//        $('body').toggleClass('sidebar-hidden')
     },
+      
     sidebarMinimize (e) {
-      e.preventDefault()
-      document.body.classList.toggle('sidebar-minimized')
+//      e.preventDefault()
+//      document.body.classList.toggle('sidebar-minimized')
+        $('body').toggleClass('sidebar-minimized')
     },
+      
     mobileSidebarToggle (e) {
-      e.preventDefault()
-      document.body.classList.toggle('sidebar-mobile-show')
+//        e.preventDefault()
+//        document.body.classList.toggle('sidebar-mobile-show')
+        $('body').toggleClass('sidebar-mobile-show')
     },
+      
     asideToggle (e) {
-      e.preventDefault()
-      document.body.classList.toggle('aside-menu-hidden')
+//      e.preventDefault()
+//      document.body.classList.toggle('aside-menu-hidden')
+        $('body').toggleClass('aside-menu-hidden')
     }
   }
 }
