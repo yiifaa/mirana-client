@@ -49,7 +49,7 @@
               <span class="badge badge-info">42</span>
           </a>
           
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="javascript:void(0)" @click="confirm">
               <i class="fa fa-envelope-o"></i>
               <message keys="commons.message"/>
               <span class="badge badge-success">42</span>
@@ -144,7 +144,16 @@ export default {
 //      e.preventDefault()
 //      document.body.classList.toggle('aside-menu-hidden')
         $('body').toggleClass('aside-menu-hidden')
-    }
+    },
+      
+    confirm () {
+        let promise = this.$confirm()
+        promise.then(function(val) {
+            alert(val)
+        }).catch(function(err) {
+            alert(err)
+        })
+    }  
   }
 }
 </script>

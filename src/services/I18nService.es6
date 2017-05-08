@@ -19,6 +19,13 @@ const I18nService = {
         return i18n
     },
     
+    /**
+     * 覆盖实现
+     */
+    getMessage (key) {
+       
+    },
+    
     install(vm) {
         
         /**
@@ -26,9 +33,8 @@ const I18nService = {
          * @param key
          * @returns {String}
          */
-        let getMessage = function(key) {
-            let args = null,
-                k	= key
+        this.getMessage = function(key, args) {
+            let k	= key
             if($.type(key) === 'object') {
                 k = Object.keys(key)[0]
                 args = key[k]
@@ -36,6 +42,8 @@ const I18nService = {
             return vm.$t(k, args)
             //  return Vue.message(k, args)
         }
+        //  本区域使用
+        let getMessage = this.getMessage
           /**
          * 添加message指令，根据参数自动添加上下文指令
          */

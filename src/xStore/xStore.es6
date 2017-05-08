@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import { MESSAGE, THEME } from './xType.es6'
+import { MESSAGE, THEME, ERROR } from './xType.es6'
 import UuidService from 'services/UuidService.es6'
 
 Vue.use(Vuex)
@@ -54,6 +54,18 @@ const store = new Vuex.Store({
          */
         [THEME] (state, payload) {
             state.theme = payload.theme
+        },
+        
+        /**
+         * 处理错误
+         */
+        [ERROR] (state, payload) {
+            let { text } = payload
+            state.message.status = 'danger'
+            state.message.text = text;
+            state.message.show = true
+            state.message.duration = 10000
+            state.message.id = UuidService.uuid()
         }
     }
 })

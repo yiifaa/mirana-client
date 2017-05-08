@@ -7,7 +7,6 @@ Vue.use(Router)
 export default {
     
     init () {
-        console.log(routes)
         let router = new Router({
               //    适用于在线
               mode: 'hash',

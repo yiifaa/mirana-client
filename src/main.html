@@ -17,4 +17,27 @@
     </div>    
 </div>
 -->
-<router-view></router-view>
+<div class="container-fluid" style="padding:0px;">
+   <router-view></router-view>
+    <!-- 辅助区域 -->
+   <div id="app-alarms">
+      <template v-for="ms in messageQueue" >
+         <alert v-if="ms.show" :type="ms.status" width="100%" :model="ms" :key="ms.id"
+                :value="ms.show" :dismissable="true" :duration="ms.duration" :close="remove">
+             <p v-html="ms.text"></p>
+         </alert>
+      </template>
+   </div>
+   
+   <modal :class="modalClass" v-model="modal.show" 
+          :backdrop="false" effect="fade/zoom"
+          :ok-text="$t('commons.buttons.ok')" @ok="ok" 
+          :cancel-text="$t('commons.buttons.cancel')" @cancel="cancel" >
+      <div slot="modal-header" class="modal-header">
+        <h4 class="modal-title" v-text="modal.title"></h4>
+      </div>
+      <p v-html="modal.comments">
+      </p>
+    </modal>
+   
+</div>
