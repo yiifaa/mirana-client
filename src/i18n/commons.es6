@@ -37,7 +37,8 @@ export default {
             logout: '注销',
             lock: '锁定账户',
             update: '更新',
-            ok: '确定'
+            ok: '确定',
+            refresh: '刷新'
         },
         
         login: {

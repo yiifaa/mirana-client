@@ -13,7 +13,7 @@
         <a class="nav-link" href="#" v-message="'commons.users'"></a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="#" v-message="'commons.settings'"></a>
+        <a class="nav-link" href="#" v-message="'commons.buttons.refresh'"></a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
