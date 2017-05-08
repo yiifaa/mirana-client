@@ -37,6 +37,11 @@ export default {
                 switch(status) {
                         
                     //  处理404错误
+                    case 403:
+                        text = I18nService.getMessage('commons.error.404', [url])
+                        break;    
+                        
+                    //  处理404错误
                     case 404:
                         text = I18nService.getMessage('commons.error.404', [url])
                         break;
