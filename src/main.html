@@ -19,7 +19,7 @@
 -->
 <div class="container-fluid" style="padding:0px;">
    <router-view></router-view>
-    <!-- 辅助区域 -->
+   <!-- 辅助区域 -->
    <div id="app-alarms">
       <template v-for="ms in messageQueue" >
          <alert v-if="ms.show" :type="ms.status" width="100%" :model="ms" :key="ms.id"
@@ -38,6 +38,5 @@
       </div>
       <p v-html="modal.comments">
       </p>
-    </modal>
-   
+    </modal>   
 </div>

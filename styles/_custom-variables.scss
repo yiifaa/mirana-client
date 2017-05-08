@@ -64,8 +64,10 @@ $navbar-active-color:               rgba(0,0,0,.8);
 $navbar-disabled-color:             rgba(0,0,0,.15);
 
 // Sidebar
+//   发布到桌面版时，改为280PX
+//    移动版为200px
+$sidebar-width:                     200px;
 
-$sidebar-width:                     280px;
 $sidebar-padding:                   0;
 $sidebar-minimized-width:           50px;
 $sidebar-minimized-height:          $sidebar-minimized-width;

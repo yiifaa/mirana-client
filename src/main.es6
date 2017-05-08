@@ -86,7 +86,7 @@ let AppRoot = Vue.extend({
     created () {
         //  安装国际化指令与组件
         I18nService.install(this)
-        //  添加确认框方法
+        //  添加实例方法
         Vue.prototype.$confirm = (payload = {
                     title : I18nService.getMessage('commons.confirm.title'),
                     status : 'warning',
@@ -129,6 +129,28 @@ let AppRoot = Vue.extend({
         
         cancel () {
             this.$emit('modal.cancel')
+        },
+        
+        confirm (payload = {
+                    title : I18nService.getMessage('commons.confirm.title'),
+                    status : 'warning',
+                    comments : I18nService.getMessage('commons.confirm.comments')
+                 }) {
+            this.modal.title = payload.title
+            this.modal.status = payload.status
+            this.modal.comments = payload.comments
+            //  显示对话框
+            this.modal.show = true
+            return new Promise((resolve, reject) => {                
+                //  等待事件发生
+                this.$on('modal.ok', () => {
+                    resolve(true)
+                })
+                
+                this.$on('modal.cancel', () => {
+                    reject(false)
+                })
+            })
         }
     }
     
