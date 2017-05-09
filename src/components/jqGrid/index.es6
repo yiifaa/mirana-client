@@ -442,10 +442,14 @@ let jqGrid = {
 					//	查询参数信息
 					Object.assign(options, {
 						prmNames : {
-							page : "page",
-							rows : "size",
-							sort : "sd",
-							order : "dir"
+                            //  当前页数
+							page : "currPage",
+                            //  每页数量
+							rows : "pageSize",
+                            // 排序字段
+							sort : "sortColumn",
+                            // 排序方向
+							order : "order"
 						}
 					})
 				} else {
@@ -568,9 +572,11 @@ let jqGrid = {
             Object.assign(options, {
 					datatype: "json",
                 jsonReader : {
-                    root : "rows",
+                    //  存放记录位置
+                    root : "results",
+                    //  当前页数
                     page : "currPage",
-                    total : "totalPages",    // 所有的页数
+                    total : "pages",    // 所有的页数
                     records : "count", // 所有的记录数
                     id : this.idField,
                     repeatitems : true//设置此元素为true,将会容许出现重复元素,但是重复的元素无法同时选中

@@ -17,11 +17,12 @@ export default {
                 let args = arguments,
                     datas = args[0]
                 //  对数据进行处理
-                datas.__module__ = "local"
+                datas.__module__ = 'local'
                 if(datas && !datas.logon && datas.status === -1) {
                     store.commit(LOGON, {
                         state: datas.logon,
-                        timestamp: datas.timestamp
+                        timestamp: datas.timestamp,
+                        username: ''
                     })
                 }
                 //console.log(datas)

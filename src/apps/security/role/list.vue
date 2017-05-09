@@ -1,0 +1,49 @@
+<template>
+    <div class="sti-list-page">
+        <div class="sti-list-query">
+            <div class="pull-left">
+                <button class="btn btn-default">新增</button>
+            </div>
+            <div class="pull-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="查询分类">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+       <jq-grid :url="url" col-size="3" :sub-grid="false">
+           <jq-col label="角色名称" name="name" width="75" :sortable="true"></jq-col>
+           <jq-col label="优先级" name="order" width="90"></jq-col>
+           <jq-col label="角色描述" name="remarks" width="90"></jq-col>
+       </jq-grid>
+    </div>
+</template>
+<script>
+import {jqGrid, jqCol} from 'components/jqGrid/index.es6'
+import UrlService from 'services/UrlService.es6'
+
+export default {
+    
+    components: {
+        jqGrid,
+        jqCol
+    },
+    
+    data () {
+        let url = UrlService.url('app/security/role/query')
+        return {
+            url
+        }
+    },
+    
+    mounted () {
+        
+    }
+    
+}
+</script>

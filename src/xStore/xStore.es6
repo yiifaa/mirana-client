@@ -76,6 +76,7 @@ const store = new Vuex.Store({
         [LOGON] (state, payload) {
             state.logon.state = payload.state
             state.logon.timestamp = payload.timestamp
+            state.logon.username = payload.username
         }
     }
 })

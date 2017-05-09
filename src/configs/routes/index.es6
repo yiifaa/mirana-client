@@ -9,6 +9,7 @@ import Widgets from '@/views/Widgets.vue'
 import comps from './components.es6'
 import icons from './icons.es6'
 import pages from './pages.es6'
+import security from './security.es6'
 
 const apps = {
     //  小屏配置
@@ -25,6 +26,7 @@ const apps = {
             component: Dashboard,
             news: true
         },
+        security,
         comps,
         icons,        
         {

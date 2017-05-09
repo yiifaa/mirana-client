@@ -76,7 +76,8 @@
                     if(datas.logon) {
                         this.$store.commit(LOGON, {
                             state: datas.logon,
-                            timestamp: datas.timestamp
+                            timestamp: datas.timestamp,
+                            username: datas.username
                         })
                     }
                 })

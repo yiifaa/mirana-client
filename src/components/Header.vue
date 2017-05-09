@@ -33,8 +33,8 @@
       
       <dropdown size="nav" class="nav-item">
         <span slot="button">
-          <img src="static/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-          <span class="d-md-down-none">admin</span>
+          <img src="static/img/avatars/6.jpg" class="img-avatar" :alt="username">
+          <span class="d-md-down-none" v-text="username"></span>
         </span>
         
         <div slot="dropdown-menu"class="dropdown-menu dropdown-menu-right">
@@ -106,12 +106,20 @@ import $ from 'jquery'
 import UrlService from 'services/UrlService.es6'
 
 export default {
+    
   name: 'header',
     
   components: {
     navbar,
     dropdown
   },
+    
+    computed: {
+      
+        username () {
+            return this.$store.state.logon.username
+        }
+    },
     
   methods: {
       
@@ -120,7 +128,8 @@ export default {
           $.get(url, datas => {
                 this.$store.commit(LOGON, {
                     state: datas.logon,
-                    timestamp: datas.timestamp
+                    timestamp: datas.timestamp,
+                    username: ''
                 })
           })
       },

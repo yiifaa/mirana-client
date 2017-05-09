@@ -1,4 +1,4 @@
-const basePath = "http://localhost/StiRooter/"
+const basePath = "/StiRooter/"
 
 export default {
     
