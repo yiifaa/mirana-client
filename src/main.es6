@@ -9,6 +9,7 @@ import I18nService from 'services/I18nService.es6'
 import RouteService from 'services/RouteService.es6'
 import HttpService from 'services/HttpService.es6'
 import UrlService from 'services/UrlService.es6'
+import { basePath } from 'configs/AppConfig.es6'
 import { store } from 'xStore/xStore.es6'
 import { MESSAGE, THEME } from 'xStore/xType.es6'
 
@@ -19,6 +20,7 @@ import { alert, modal } from 'components/vue-strap'
 
 let i18n = I18nService.init(),
     router = RouteService.init()
+
 //  格式化Http服务
 HttpService.init($)
 //  创建根组件
@@ -106,8 +108,10 @@ let AppRoot = Vue.extend({
     created () {
         //  安装国际化指令与组件
         I18nService.install(this)
+        //  安装实例化方法
         this.installConfirm()
-        //
+        this.installUrl()
+        //  确定登陆状况
         $.getJSON(UrlService.url('app/home'), function(datas) {
             console.log(1, datas)
         })
@@ -181,6 +185,15 @@ let AppRoot = Vue.extend({
                         reject(false)
                     })
                 })
+            }
+        },
+        
+        /**
+         * 安装路径访问服务
+         */
+        installUrl () {
+            Vue.prototype.$url = path => {
+                return basePath + path
             }
         }
     }
