@@ -8,6 +8,7 @@ import HtmlPlugin from 'plugins/HtmlPlugin.es6'
 import I18nService from 'services/I18nService.es6'
 import RouteService from 'services/RouteService.es6'
 import HttpService from 'services/HttpService.es6'
+import UrlService from 'services/UrlService.es6'
 import { store } from 'xStore/xStore.es6'
 import { MESSAGE, THEME } from 'xStore/xType.es6'
 
@@ -59,6 +60,13 @@ let AppRoot = Vue.extend({
         },
         
         /**
+         * 登陆状态
+         */
+        logon () {
+            return this.$store.state.logon
+        },
+        
+        /**
          *  对话框样式
          */
         modalClass () {
@@ -79,6 +87,18 @@ let AppRoot = Vue.extend({
                     this.messageQueue.push(message)                   
                 },
                 deep: true
+            },
+        
+            logon: {
+                handler (val) {
+                    let state = val.state
+                    if(state === false) {
+                        this.$router.push('/pages/login')
+                    } else {
+                        this.$router.push('/dashboard')
+                    }
+                },
+                deep: true
             }
     },
     
@@ -86,28 +106,11 @@ let AppRoot = Vue.extend({
     created () {
         //  安装国际化指令与组件
         I18nService.install(this)
-        //  添加实例方法
-        Vue.prototype.$confirm = (payload = {
-                    title : I18nService.getMessage('commons.confirm.title'),
-                    status : 'warning',
-                    comments : I18nService.getMessage('commons.confirm.comments')
-                 }) => {
-            this.modal.title = payload.title
-            this.modal.status = payload.status
-            this.modal.comments = payload.comments
-            //  显示对话框
-            this.modal.show = true
-            return new Promise((resolve, reject) => {                
-                //  等待事件发生
-                this.$on('modal.ok', () => {
-                    resolve(true)
-                })
-                
-                this.$on('modal.cancel', () => {
-                    reject(false)
-                })
-            })
-        }
+        this.installConfirm()
+        //
+        $.getJSON(UrlService.url('app/home'), function(datas) {
+            console.log(1, datas)
+        })
     },
     
     methods : {
@@ -151,6 +154,34 @@ let AppRoot = Vue.extend({
                     reject(false)
                 })
             })
+        },
+        
+        /**
+         *  安装确认框
+         */
+        installConfirm () {
+            //  添加实例方法
+            Vue.prototype.$confirm = (payload = {
+                        title : I18nService.getMessage('commons.confirm.title'),
+                        status : 'warning',
+                        comments : I18nService.getMessage('commons.confirm.comments')
+                     }) => {
+                this.modal.title = payload.title
+                this.modal.status = payload.status
+                this.modal.comments = payload.comments
+                //  显示对话框
+                this.modal.show = true
+                return new Promise((resolve, reject) => {                
+                    //  等待事件发生
+                    this.$on('modal.ok', () => {
+                        resolve(true)
+                    })
+
+                    this.$on('modal.cancel', () => {
+                        reject(false)
+                    })
+                })
+            }
         }
     }
     

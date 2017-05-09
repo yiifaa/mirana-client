@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import { ERROR } from 'xStore/xType.es6'
+import { ERROR, LOGON } from 'xStore/xType.es6'
 import { store } from 'xStore/xStore.es6'
 import I18nService from 'services/I18nService.es6'
 
@@ -17,7 +17,14 @@ export default {
                 let args = arguments,
                     datas = args[0]
                 //  对数据进行处理
-                datas.status = 200
+                datas.__module__ = "local"
+                if(datas && !datas.logon && datas.status === -1) {
+                    store.commit(LOGON, {
+                        state: datas.logon,
+                        timestamp: datas.timestamp
+                    })
+                }
+                //console.log(datas)
                 /**
                 var str = JSON.stringify(datas);
                 var rstr = str.replace(/XXX电力局/g, 'XXX水利局');

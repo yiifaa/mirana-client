@@ -84,7 +84,7 @@
               <i class="fa fa-shield"></i> 
               <message keys="commons.buttons.lock"/>
           </a>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="#" @click.prevent="logout">
               <i class="fa fa-lock"></i>
               <message keys="commons.buttons.logout"/>
           </a>
@@ -101,8 +101,9 @@
 
 import navbar from './Navbar.vue'
 import { dropdown } from 'components/vue-strap'
-import { MESSAGE } from 'xStore/xType.es6'
+import { MESSAGE, LOGON } from 'xStore/xType.es6'
 import $ from 'jquery'
+import UrlService from 'services/UrlService.es6'
 
 export default {
   name: 'header',
@@ -113,6 +114,16 @@ export default {
   },
     
   methods: {
+      
+      logout () {
+          let url = UrlService.url('login/out')
+          $.get(url, datas => {
+                this.$store.commit(LOGON, {
+                    state: datas.logon,
+                    timestamp: datas.timestamp
+                })
+          })
+      },
       
     sendMessage () {
        this.$store.commit(MESSAGE, {status:'success', text:'操作成功了！'}) 

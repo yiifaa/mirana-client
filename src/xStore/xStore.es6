@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import { MESSAGE, THEME, ERROR } from './xType.es6'
+import { MESSAGE, THEME, ERROR, LOGON } from './xType.es6'
 import UuidService from 'services/UuidService.es6'
 
 Vue.use(Vuex)
@@ -25,6 +25,11 @@ const store = new Vuex.Store({
             duration: DURATION,
             show: true,
             id: '-1'
+        },
+        
+        logon: {
+            state : false,
+            timestamp: 0
         },
         
         theme: 'blue'
@@ -66,6 +71,11 @@ const store = new Vuex.Store({
             state.message.show = true
             state.message.duration = 10000
             state.message.id = UuidService.uuid()
+        },
+        
+        [LOGON] (state, payload) {
+            state.logon.state = payload.state
+            state.logon.timestamp = payload.timestamp
         }
     }
 })
