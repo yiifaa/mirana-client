@@ -22,6 +22,12 @@ $.jgrid.styleUI.Bootstrap.base.icon_desc = "fa-sort-desc"
 $.jgrid.styleUI.Bootstrap.base.icon_caption_open = "fa-arrow-up"
 $.jgrid.styleUI.Bootstrap.base.icon_caption_close = "fa-arrow-down"
 
+$.jgrid.styleUI.Bootstrap.subgrid = {
+    icon_plus : 'fa fa-chevron-right',
+    icon_minus : 'fa fa-chevron-down',
+    icon_open : 'fa fa-chevron-left'
+}
+
 let SubGrid = Vue.extend({
 
 	template : subTemplate,

@@ -5,9 +5,9 @@ import moment from 'moment'
   */
 let formatBool = function(val) {
     if(val === true) {
-        return "真"
+        return "是"
     }
-    return "假"
+    return "否"
 }
 
 /**

@@ -16,7 +16,7 @@
             </div>
         </div>
 
-       <jq-grid :url="url" col-size="3" :sub-grid="false">
+       <jq-grid :url="url" col-size="3" :sub-grid="true">
            <jq-col label="用户名" name="username" width="75" :sortable="true"></jq-col>
            <jq-col label="已激活" name="enabled" width="90" :formatter="formatBool"></jq-col>
            <jq-col label="创建时间" name="createTime" width="90" :formatter="dateTimeFormat"></jq-col>

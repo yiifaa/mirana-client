@@ -4,7 +4,7 @@
             <div class="app-body">
                 <Sidebar/>
                 <main class="main">
-                    <breadcrumb :list="list"/>
+                    <breadcrumb :list="list" style="margin-bottom:15px;"/>
                     <div class="container-fluid" id="aFluid">
                         <router-view></router-view>
                     </div>

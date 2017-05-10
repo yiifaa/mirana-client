@@ -5,11 +5,13 @@ import sLayout from '@/sLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Charts from '@/views/Charts.vue'
 import Widgets from '@/views/Widgets.vue'
+import Events from 'apps/events/list.vue'
 
 import comps from './components.es6'
 import icons from './icons.es6'
 import pages from './pages.es6'
 import security from './security.es6'
+
 
 const apps = {
     //  小屏配置
@@ -25,6 +27,14 @@ const apps = {
             name: '仪表盘',
             component: Dashboard,
             news: true
+        },
+        {
+            path: 'events',
+            icon: 'fa fa-video-camera',
+            //alias: '/'    
+            name: '事件分析',
+            component: Events,
+            news: false
         },
         security,
         comps,
