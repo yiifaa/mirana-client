@@ -102,6 +102,7 @@ module.exports = {
 				
             // 内置模块
 			'@': path.resolve(__dirname, '../src/'),
+            'libs': path.resolve(__dirname, '../libs/'),
             'apps': path.resolve(__dirname, '../src/apps'),
             'plugins': path.resolve(__dirname, '../src/plugins'),
             'components': path.resolve(__dirname, '../src/components'),

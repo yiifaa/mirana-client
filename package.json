@@ -49,7 +49,6 @@
     "jquery-validation": "^1.16.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "sparkline": "^0.1.2",
     "vue": "^2.2.6",
     "vue-chartjs": "2.6.1",
     "vue-i18n": "^6.1.1",
