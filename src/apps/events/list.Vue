@@ -31,8 +31,8 @@
               关联结果
             </h4>
           </div>
-          <div>
-              关联结果
+          <div style="width:450px;height:250px;" id="mainChart">
+              
           </div>
        </modal>
        
@@ -73,6 +73,7 @@
 <script>
 import {jqGrid, jqCol} from 'components/jqGrid/index.es6'
 import { formatBool, dateTimeFormat } from 'services/FormatService.es6'
+import EChartService from 'services/EChartService.es6'
 import $ from 'jquery'
 import { modal } from 'components/vue-strap'
 
@@ -151,6 +152,40 @@ export default {
                    `
         },
         
+        initChart () {
+            console.log(123)
+            var myChart = EChartService.init('mainChart');                
+            var option = {
+                tooltip: {
+                    show: true
+                },
+                legend: {
+                    data:['事件数量']
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : ["系统登录","网络访问","数据库写入","安装软件","系统授权"]
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        "name":"事件数量",
+                        "type":"bar",
+                        "data":[5, 20, 40, 10, 10]
+                    }
+                ]
+            };
+
+            // 为echarts对象加载数据 
+            myChart.setOption(option); 
+        },
+        
         initGrid () {
             let _this = this
             $(this.$el).find(".btn-search").on("click", function(event) {
@@ -164,6 +199,14 @@ export default {
                     // alert(err)
                 })
             })
+            //
+            $(this.$el).find(".btn-topo").on("click", function() {
+                    _this.show = true
+                    _this.$nextTick(() => {
+                        _this.initChart()
+                    })
+            });
+            
             //  let panel = $(this.$el).find('#hoverPanel')
             $(this.$el).find(".btn-type").hover(function(event) {
                 let left = event.pageX + 15,
