@@ -18,14 +18,15 @@
 
        <jq-grid :url="url" col-size="3" :sub-grid="false">
            <jq-col label="用户名" name="username" width="75" :sortable="true"></jq-col>
-           <jq-col label="已激活" name="enabled" width="90"></jq-col>
-           <jq-col label="创建时间" name="createTime" width="90"></jq-col>
+           <jq-col label="已激活" name="enabled" width="90" :formatter="formatBool"></jq-col>
+           <jq-col label="创建时间" name="createTime" width="90" :formatter="dateTimeFormat"></jq-col>
        </jq-grid>
     </div>
 </template>
 <script>
 import {jqGrid, jqCol} from 'components/jqGrid/index.es6'
 import UrlService from 'services/UrlService.es6'
+import { formatBool, dateTimeFormat } from 'services/FormatService.es6'
 
 export default {
     
@@ -42,6 +43,13 @@ export default {
     },
     
     mounted () {
+        
+    },
+    
+    methods: {
+        
+        formatBool,
+        dateTimeFormat
         
     }
     

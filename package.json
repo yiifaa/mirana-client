@@ -40,17 +40,20 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "chart.js": "2.5.0",
+    "d3": "^4.8.0",
     "echarts": "^3.5.4",
     "font-awesome": "^4.7.0",
     "jqGrid": "^5.1.1",
     "jquery": "^3.2.1",
     "jquery-validation": "^1.16.0",
     "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "sparkline": "^0.1.2",
     "vue": "^2.2.6",
+    "vue-chartjs": "2.6.1",
     "vue-i18n": "^6.1.1",
     "vue-router": "^2.5.3",
-    "vuex": "^2.3.1",
-    "chart.js": "2.5.0",
-    "vue-chartjs": "2.6.1"
+    "vuex": "^2.3.1"
   }
 }
