@@ -14,6 +14,7 @@ module.exports = {
     output : {
         filename : '[name].js',
         //  不可配置为绝对路径
+        //publicPath: "http://localhost:8080/dist/",
         publicPath: "/dist/",
         path : build,
         //  umd包含了对amd、commonjs、var等多种规范的支持  

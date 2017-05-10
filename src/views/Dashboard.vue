@@ -7,13 +7,13 @@
             <dropdown class="float-right" type="transparent p-0">
               <i slot="button" class="icon-settings"></i>
               <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">行为分析</a>
+                <a class="dropdown-item" href="#">时间分析</a>
+                <a class="dropdown-item" href="#">类别分析</a>
               </div>
             </dropdown>
-            <h4 class="mb-0">9.823</h4>
-            <p>Members online</p>
+            <h4 class="mb-0">19823</h4>
+            <p>日志</p>
           </div>
           <card-line1-chart-example class="chart-wrapper px-3" style="height:70px;" height="70"/>
         </div>
@@ -25,13 +25,13 @@
             <dropdown class="float-right" type="transparent p-0">
               <i slot="button" class="icon-settings"></i>
               <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">快速处理</a>
+                <a class="dropdown-item" href="#">趋势分析</a>
+                <a class="dropdown-item" href="#">历史回溯</a>
               </div>
             </dropdown>
-            <h4 class="mb-0">9.823</h4>
-            <p>Members online</p>
+            <h4 class="mb-0">22</h4>
+            <p>告警</p>
           </div>
           <card-line2-chart-example class="chart-wrapper px-3" style="height:70px;" height="70"/>
         </div>
@@ -44,14 +44,15 @@
               <dropdown class="float-right" type="transparent p-0">
                 <i slot="button" class="icon-settings"></i>
                 <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">危险IP库</a>
+                    <a class="dropdown-item" href="#">恶意软件库</a>
+                    <a class="dropdown-item" href="#">恶意地址库</a>
+                    <a class="dropdown-item" href="#">病毒库</a>
                 </div>
               </dropdown>
             </div>
-            <h4 class="mb-0">9.823</h4>
-            <p v-message="'commons.title'"></p>
+            <h4 class="mb-0">2932</h4>
+            <p>威胁情报</p>
           </div>
           <card-line3-chart-example class="chart-wrapper" style="height:70px;" height="70"/>
         </div>
@@ -64,14 +65,14 @@
               <dropdown class="float-right" type="transparent p-0">
                 <i slot="button" class="icon-settings"></i>
                 <div slot="dropdown-menu" class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">网络拓扑</a>
+                  <a class="dropdown-item" href="#">安全评估</a>
+                  <a class="dropdown-item" href="#">事件审计</a>
                 </div>
               </dropdown>
             </div>
-            <h4 class="mb-0">9.823</h4>
-            <p>Members online</p>
+            <h4 class="mb-0">1233</h4>
+            <p>IT资产</p>
           </div>
           <card-bar-chart-example class="chart-wrapper px-3" style="height:70px;" height="70"/>
         </div>
@@ -82,61 +83,62 @@
       <div class="card-block">
         <div class="row">
           <div class="col-sm-5">
-            <h4 class="card-title mb-0">Traffic</h4>
-            <div class="small text-muted">November 2016</div>
+            <h4 class="card-title mb-0">告警趋势分布</h4>
+            <div class="small text-muted">2017年05月</div>
           </div><!--/.col-->
           <div class="col-sm-7 hidden-sm-down">
             <button type="button" class="btn btn-primary float-right"><i class="icon-cloud-download"></i></button>
             <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
                 <label class="btn btn-outline-secondary">
-                  <input type="radio" name="options" id="option1"> Day
+                  <input type="radio" name="options" id="option1"> 天
                 </label>
                 <label class="btn btn-outline-secondary active">
-                  <input type="radio" name="options" id="option2" checked> Month
+                  <input type="radio" name="options" id="option2" checked> 月
                 </label>
                 <label class="btn btn-outline-secondary">
-                  <input type="radio" name="options" id="option3"> Year
+                  <input type="radio" name="options" id="option3"> 年
                 </label>
               </div>
             </div>
           </div><!--/.col-->
         </div><!--/.row-->
-        <main-chart-example class="chart-wrapper" style="height:300px;margin-top:40px;" height="300"></main-chart-example>
+        <main-chart-example class="chart-wrapper" style="height:300px;margin-top:40px;" height="300">
+        </main-chart-example>
       </div>
       <div class="card-footer">
         <ul>
           <li>
-            <div class="text-muted">Visits</div>
-            <strong>29.703 Users (40%)</strong>
+            <div class="text-muted">路由器</div>
+            <strong>297次 (40%)</strong>
             <div class="progress progress-xs mt-2">
               <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </li>
           <li class="hidden-sm-down">
-            <div class="text-muted">Unique</div>
-            <strong>24.093 Users (20%)</strong>
+            <div class="text-muted">数据库</div>
+            <strong>149次 (20%)</strong>
             <div class="progress progress-xs mt-2">
               <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </li>
           <li>
-            <div class="text-muted">Pageviews</div>
-            <strong>78.706 Views (60%)</strong>
+            <div class="text-muted">防火墙</div>
+            <strong>149次 (20%)</strong>
             <div class="progress progress-xs mt-2">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </li>
           <li class="hidden-sm-down">
-            <div class="text-muted">New Users</div>
-            <strong>22.123 Users (80%)</strong>
+            <div class="text-muted">主机</div>
+            <strong>79次 (10%)</strong>
             <div class="progress progress-xs mt-2">
               <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </li>
           <li class="hidden-sm-down">
-            <div class="text-muted">Bounce Rate</div>
-            <strong>40.15%</strong>
+            <div class="text-muted">恶意软件</div>
+            <strong>79次 (10%)</strong>
             <div class="progress progress-xs mt-2">
               <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
@@ -144,91 +146,12 @@
         </ul>
       </div>
     </div><!--/.card-->
-
-    <div class="row">
-      <div class="col-sm-6 col-lg-3">
-        <div class="social-box facebook">
-          <i class="fa fa-facebook"></i>
-          <div class="chart-wrapper">
-            <social-box-chart-example :data="[65, 59, 84, 84, 51, 55, 40]" height="90"/>
-          </div>
-          <ul>
-            <li>
-              <strong>89k</strong>
-              <span>friends</span>
-            </li>
-            <li>
-              <strong>459</strong>
-              <span>feeds</span>
-            </li>
-          </ul>
-        </div><!--/.social-box-->
-      </div><!--/.col-->
-
-      <div class="col-sm-6 col-lg-3">
-        <div class="social-box twitter">
-          <i class="fa fa-twitter"></i>
-          <div class="chart-wrapper">
-            <social-box-chart-example :data="[1, 13, 9, 17, 34, 41, 38]" height="90"/>
-          </div>
-          <ul>
-            <li>
-              <strong>973k</strong>
-              <span>followers</span>
-            </li>
-            <li>
-              <strong>1.792</strong>
-              <span>tweets</span>
-            </li>
-          </ul>
-        </div><!--/.social-box-->
-      </div><!--/.col-->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="social-box linkedin">
-          <i class="fa fa-linkedin"></i>
-          <div class="chart-wrapper">
-            <social-box-chart-example :data="[78, 81, 80, 45, 34, 12, 40]" height="90"/>
-          </div>
-          <ul>
-            <li>
-              <strong>500+</strong>
-              <span>contacts</span>
-            </li>
-            <li>
-              <strong>292</strong>
-              <span>feeds</span>
-            </li>
-          </ul>
-        </div><!--/.social-box-->
-      </div><!--/.col-->
-
-      <div class="col-sm-6 col-lg-3">
-        <div class="social-box google-plus">
-          <i class="fa fa-google-plus"></i>
-          <div class="chart-wrapper">
-            <social-box-chart-example :data="[35, 23, 56, 22, 97, 23, 64]" height="90"/>
-          </div>
-          <ul>
-            <li>
-              <strong>894</strong>
-              <span>followers</span>
-            </li>
-            <li>
-              <strong>92</strong>
-              <span>circles</span>
-            </li>
-          </ul>
-        </div><!--/.social-box-->
-      </div><!--/.col-->
-    </div><!--/.row-->
-
+     
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            Traffic &amp; Sales
+            日志 &amp; 告警
           </div>
           <div class="card-block">
             <div class="row">
@@ -236,13 +159,13 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="callout callout-info">
-                      <small class="text-muted">New Clients</small><br>
+                      <small class="text-muted">数据库日志</small><br>
                       <strong class="h4">9,123</strong>
                     </div>
                   </div><!--/.col-->
                   <div class="col-sm-6">
                     <div class="callout callout-danger">
-                      <small class="text-muted">Recuring Clients</small><br>
+                      <small class="text-muted">WEB服务器日志</small><br>
                       <strong class="h4">22,643</strong>
                     </div>
                   </div><!--/.col-->
@@ -251,7 +174,7 @@
                 <ul class="horizontal-bars">
                   <li>
                     <div class="title">
-                      Monday
+                      星期一
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -264,7 +187,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Tuesday
+                      星期二
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -277,7 +200,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Wednesday
+                      星期三
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -290,7 +213,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Thursday
+                      星期四
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -303,7 +226,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Friday
+                      星期五
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -316,7 +239,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Saturday
+                      星期六
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -329,7 +252,7 @@
                   </li>
                   <li>
                     <div class="title">
-                      Sunday
+                      星期天
                     </div>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -341,7 +264,7 @@
                     </div>
                   </li>
                   <li class="legend">
-                    <span class="badge badge-pill badge-info"></span> <small>New clients</small> &nbsp; <span class="badge badge-pill badge-danger"></span> <small>Recurring clients</small>
+                    <span class="badge badge-pill badge-info"></span> <small>告警数量</small> &nbsp; <span class="badge badge-pill badge-danger"></span> <small>日志数量</small>
                   </li>
                 </ul>
               </div><!--/.col-->
@@ -349,13 +272,13 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="callout callout-warning">
-                      <small class="text-muted">Pageviews</small><br>
+                      <small class="text-muted">IP地址库</small><br>
                       <strong class="h4">78,623</strong>
                     </div>
                   </div><!--/.col-->
                   <div class="col-sm-6">
                     <div class="callout callout-success">
-                      <small class="text-muted">Organic</small><br>
+                      <small class="text-muted">恶意病毒库</small><br>
                       <strong class="h4">49,123</strong>
                     </div>
                   </div><!--/.col-->
@@ -363,8 +286,8 @@
                 <hr class="mt-0">
                 <ul class="horizontal-bars type-2">
                   <li>
-                    <i class="icon-user"></i>
-                    <span class="title">Male</span>
+                    <i class="fa fa-mail-forward"></i>
+                    <span class="title">本月新增</span>
                     <span class="value">43%</span>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -373,20 +296,20 @@
                     </div>
                   </li>
                   <li>
-                    <i class="icon-user-female"></i>
-                    <span class="title">Female</span>
-                    <span class="value">37%</span>
+                    <i class="fa fa-mail-reply"></i>
+                    <span class="title">本月失效</span>
+                    <span class="value">27%</span>
                     <div class="bars">
                       <div class="progress progress-xs">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 37%" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 37%" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </li>
                   <li class="divider"></li>
                   <li>
                     <i class="icon-globe"></i>
-                    <span class="title">Organic Search</span>
-                    <span class="value">191,235 <span class="text-muted small">(56%)</span></span>
+                    <span class="title">IP地址库</span>
+                    <span class="value">51,223 <span class="text-muted small">(56%)</span></span>
                     <div class="bars">
                       <div class="progress progress-xs">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
@@ -394,9 +317,9 @@
                     </div>
                   </li>
                   <li>
-                    <i class="icon-social-facebook"></i>
-                    <span class="title">Facebook</span>
-                    <span class="value">51,223 <span class="text-muted small">(15%)</span></span>
+                    <i class="fa fa-bug"></i>
+                    <span class="title">恶意软件库</span>
+                    <span class="value">191,235 <span class="text-muted small">(15%)</span></span>
                     <div class="bars">
                       <div class="progress progress-xs">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
@@ -404,8 +327,8 @@
                     </div>
                   </li>
                   <li>
-                    <i class="icon-social-twitter"></i>
-                    <span class="title">Twitter</span>
+                    <i class="fa fa-eye-slash"></i>
+                    <span class="title">病毒库</span>
                     <span class="value">37,564 <span class="text-muted small">(11%)</span></span>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -414,8 +337,8 @@
                     </div>
                   </li>
                   <li>
-                    <i class="icon-social-linkedin"></i>
-                    <span class="title">LinkedIn</span>
+                    <i class="fa fa-external-link"></i>
+                    <span class="title">恶意地址库</span>
                     <span class="value">27,319 <span class="text-muted small">(8%)</span></span>
                     <div class="bars">
                       <div class="progress progress-xs">
@@ -432,13 +355,13 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="callout">
-                      <small class="text-muted">CTR</small><br>
+                      <small class="text-muted">数据库</small><br>
                       <strong class="h4">23%</strong>
                     </div>
                   </div><!--/.col-->
                   <div class="col-sm-6">
                     <div class="callout callout-primary">
-                      <small class="text-muted">Bounce Rate</small><br>
+                      <small class="text-muted">路由器</small><br>
                       <strong class="h4">5%</strong>
                     </div>
                   </div><!--/.col-->
@@ -448,12 +371,12 @@
                   <li>
                     <i class="icon-screen-desktop bg-primary"></i>
                     <div class="desc">
-                      <div class="title">iMac 4k</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">WEB服务器</div>
+                      <small>10.1.2.9</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Sold this week</div>
-                      <strong>1.924</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>19</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -462,12 +385,12 @@
                   <li>
                     <i class="icon-screen-smartphone bg-info"></i>
                     <div class="desc">
-                      <div class="title">Samsung Galaxy Edge</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">移动业务服务器</div>
+                      <small>10.1.34.2</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Sold this week</div>
-                      <strong>1.224</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>17</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -476,12 +399,12 @@
                   <li>
                     <i class="icon-screen-smartphone bg-warning"></i>
                     <div class="desc">
-                      <div class="title">iPhone 6S</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">短信服务器</div>
+                      <small>10.1.34.2</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Sold this week</div>
-                      <strong>1.163</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>15</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -490,12 +413,12 @@
                   <li>
                     <i class="icon-user bg-danger"></i>
                     <div class="desc">
-                      <div class="title">Premium accounts</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">异常登录</div>
+                      <small>数据来源4A</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Sold this week</div>
-                      <strong>928</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>11</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -504,12 +427,12 @@
                   <li>
                     <i class="icon-social-spotify bg-success"></i>
                     <div class="desc">
-                      <div class="title">Spotify Subscriptions</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">文件异常传输</div>
+                      <small>数据来源于防火墙</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Sold this week</div>
-                      <strong>893</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>10</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -518,12 +441,12 @@
                   <li>
                     <i class="icon-cloud-download bg-danger"></i>
                     <div class="desc">
-                      <div class="title">Ebook</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">云端数据服务器</div>
+                      <small>10.12.1.9</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Downloads</div>
-                      <strong>121.924</strong>
+                      <div class="small text-muted">本周告警次数</div>
+                      <strong>9</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -532,12 +455,12 @@
                   <li>
                     <i class="icon-camera bg-warning"></i>
                     <div class="desc">
-                      <div class="title">Photos</div>
-                      <small>Lorem ipsum dolor sit amet</small>
+                      <div class="title">照片服务器</div>
+                      <small>10.12.1.19</small>
                     </div>
                     <div class="value">
-                      <div class="small text-muted">Uploaded</div>
-                      <strong>12.125</strong>
+                      <div class="small text-muted">本周异常次数</div>
+                      <strong>10.12.1.29</strong>
                     </div>
                     <div class="actions">
                       <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i></button>
@@ -553,26 +476,19 @@
             <table class="table table-hover table-outline mb-0">
               <thead class="thead-default">
                 <tr>
-                  <th class="text-center"><i class="icon-people"></i></th>
-                  <th>User</th>
-                  <th class="text-center">Country</th>
-                  <th>Usage</th>
-                  <th class="text-center">Payment Method</th>
-                  <th>Activity</th>
+                  <th>攻击地址</th>
+                  <th class="text-center">所属区域</th>
+                  <th>行为异常比例</th>
+                  <th class="text-center">异常行为</th>
+                  <th>最新活动时间</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-success"></span>
-                    </div>
-                  </td>
                   <td>
-                    <div>Yiorgos Avraamu</div>
+                    <div>2.2.2.11</div>
                     <div class="small text-muted">
-                      <span>New</span> | Registered: Jan 1, 2015
+                      <span>新</span> | 首次异常: 2016-12-01
                     </div>
                   </td>
                   <td class="text-center">
@@ -584,7 +500,7 @@
                         <strong>50%</strong>
                       </div>
                       <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        <small class="text-muted">2016-12-01 - 2017-05-10</small>
                       </div>
                     </div>
                     <div class="progress progress-xs">
@@ -592,25 +508,18 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
+                    高频度访问
                   </td>
                   <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>10 sec ago</strong>
+                    <div class="small text-muted">最新操作时间</div>
+                    <strong>10秒以前</strong>
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/2.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-danger"></span>
-                    </div>
-                  </td>
                   <td>
-                    <div>Avram Tarasios</div>
+                   <div>2.2.12.2</div>
                     <div class="small text-muted">
-
-                      <span>Recurring</span> | Registered: Jan 1, 2015
+                      <span>新</span> | 首次异常: 2016-12-01
                     </div>
                   </td>
                   <td class="text-center">
@@ -622,7 +531,7 @@
                         <strong>10%</strong>
                       </div>
                       <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        <small class="text-muted">2016-12-01 - 2017-05-10</small>
                       </div>
                     </div>
                     <div class="progress progress-xs">
@@ -630,159 +539,42 @@
                     </div>
                   </td>
                   <td class="text-center">
-                    <i class="fa fa-cc-visa" style="font-size:24px"></i>
+                    疑似暴力破解
                   </td>
                   <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>5 minutes ago</strong>
+                    <div class="small text-muted">最新操作时间</div>
+                    <strong>2017-05-10 12:00:01</strong>
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/3.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-warning"></span>
-                    </div>
-                  </td>
                   <td>
-                    <div>Quintin Ed</div>
+                   <div>2.2.12.3</div>
                     <div class="small text-muted">
-                      <span>New</span> | Registered: Jan 1, 2015
+                      <span>新</span> | 首次异常: 2016-12-01
                     </div>
                   </td>
                   <td class="text-center">
-                    <img src="static/img/flags/India.png" alt="India" style="height:24px;">
+                    <img src="static/img/flags/Brazil.png" alt="Brazil" style="height:24px;">
                   </td>
                   <td>
                     <div class="clearfix">
                       <div class="float-left">
-                        <strong>74%</strong>
+                        <strong>10%</strong>
                       </div>
                       <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        <small class="text-muted">2016-12-01 - 2017-05-10</small>
                       </div>
                     </div>
                     <div class="progress progress-xs">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </td>
                   <td class="text-center">
-                    <i class="fa fa-cc-stripe" style="font-size:24px"></i>
+                      远程登陆主机    
                   </td>
                   <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>1 hour ago</strong>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/4.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-default"></span>
-                    </div>
-                  </td>
-                  <td>
-                    <div>Enéas Kwadwo</div>
-                    <div class="small text-muted">
-                      <span>New</span> | Registered: Jan 1, 2015
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <img src="static/img/flags/France.png" alt="France" style="height:24px;">
-                  </td>
-                  <td>
-                    <div class="clearfix">
-                      <div class="float-left">
-                        <strong>98%</strong>
-                      </div>
-                      <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                      </div>
-                    </div>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <i class="fa fa-paypal" style="font-size:24px"></i>
-                  </td>
-                  <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>Last month</strong>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-success"></span>
-                    </div>
-                  </td>
-                  <td>
-                    <div>Agapetus Tadeáš</div>
-                    <div class="small text-muted">
-                      <span>New</span> | Registered: Jan 1, 2015
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <img src="static/img/flags/Spain.png" alt="Spain" style="height:24px;">
-                  </td>
-                  <td>
-                    <div class="clearfix">
-                      <div class="float-left">
-                        <strong>22%</strong>
-                      </div>
-                      <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                      </div>
-                    </div>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <i class="fa fa-google-wallet" style="font-size:24px"></i>
-                  </td>
-                  <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>Last week</strong>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="static/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                      <span class="avatar-status badge-danger"></span>
-                    </div>
-                  </td>
-                  <td>
-                    <div>Friderik Dávid</div>
-                    <div class="small text-muted">
-                      <span>New</span> | Registered: Jan 1, 2015
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <img src="static/img/flags/Poland.png" alt="Poland" style="height:24px;">
-                  </td>
-                  <td>
-                    <div class="clearfix">
-                      <div class="float-left">
-                        <strong>43%</strong>
-                      </div>
-                      <div class="float-right">
-                        <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                      </div>
-                    </div>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <i class="fa fa-cc-amex" style="font-size:24px"></i>
-                  </td>
-                  <td>
-                    <div class="small text-muted">Last login</div>
-                    <strong>Yesterday</strong>
+                    <div class="small text-muted">最新操作时间</div>
+                    <strong>2017-05-10 12:00:01</strong>
                   </td>
                 </tr>
               </tbody>

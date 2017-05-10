@@ -34,10 +34,10 @@ export default Line.extend({
       data3.push(65)
     }
     this.renderChart({
-      labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'],
       datasets: [
         {
-          label: 'My First dataset',
+          label: '告警数量',
           backgroundColor: convertHex(brandInfo, 10),
           borderColor: brandInfo,
           pointHoverBackgroundColor: '#fff',
@@ -45,7 +45,7 @@ export default Line.extend({
           data: data1
         },
         {
-          label: 'My Second dataset',
+          label: '告警增长率',
           backgroundColor: 'transparent',
           borderColor: brandSuccess,
           pointHoverBackgroundColor: '#fff',
@@ -53,7 +53,7 @@ export default Line.extend({
           data: data2
         },
         {
-          label: 'My Third dataset',
+          label: '安全警告线',
           backgroundColor: 'transparent',
           borderColor: brandDanger,
           pointHoverBackgroundColor: '#fff',

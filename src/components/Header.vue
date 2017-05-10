@@ -109,16 +109,39 @@ export default {
     
   name: 'header',
     
+    data () {
+        return {
+            username: ''
+        }    
+    },
+    
   components: {
     navbar,
     dropdown
   },
     
     computed: {
-      
-        username () {
-            return this.$store.state.logon.username
+        
+        /**
+         * 登陆状态
+         */
+        logon () {
+            return this.$store.state.logon
         }
+    },
+    
+    watch: {
+        
+         /**
+          * Vuex的数据必须要深度监控才行
+          */
+         logon: {
+             deep: true,
+             handler (val) {
+                 this.username = val.username
+             }
+         }
+        
     },
     
   methods: {
@@ -137,10 +160,6 @@ export default {
     sendMessage () {
        this.$store.commit(MESSAGE, {status:'success', text:'操作成功了！'}) 
     },  
-      
-    click () {
-      // do nothing
-    },
       
     sidebarToggle (e) {
         e.preventDefault()
