@@ -11,7 +11,7 @@ import HttpService from 'services/HttpService.es6'
 import UrlService from 'services/UrlService.es6'
 import { basePath } from 'configs/AppConfig.es6'
 import { store } from 'xStore/xStore.es6'
-import { MESSAGE, THEME } from 'xStore/xType.es6'
+import { MESSAGE, THEME, LOGON } from 'xStore/xType.es6'
 
 
 import _ from 'lodash'
@@ -112,8 +112,15 @@ let AppRoot = Vue.extend({
         this.installConfirm()
         this.installUrl()
         //  确定登陆状况
-        $.getJSON(UrlService.url('app/home'), function(datas) {
-            console.log(1, datas)
+        $.getJSON(UrlService.url('app/home'), (datas) => {
+            //  如果直接登陆成功(已登陆用户，Session处于有效期)，则更新用户数据
+            if(datas.logon) {
+                this.$store.commit(LOGON, {
+                    state: datas.logon,
+                    timestamp: datas.timestamp,
+                    username: datas.username
+                })
+            }
         })
     },
     
