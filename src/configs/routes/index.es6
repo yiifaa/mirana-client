@@ -73,7 +73,10 @@ let parse = function(options) {
             if(children && children.length > 0) {
                 let childs = []
                 children.forEach( child => {
-                    childs.push(clone(child, result))
+                    //  隐藏下级菜单
+                    if(!child.hidden) {
+                        childs.push(clone(child, result))
+                    }                    
                 })
                 result.children = childs
             }

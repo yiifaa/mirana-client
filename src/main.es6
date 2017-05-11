@@ -145,14 +145,10 @@ let AppRoot = Vue.extend({
             this.$emit('modal.cancel')
         },
         
-        confirm (payload = {
-                    title : I18nService.getMessage('commons.confirm.title'),
-                    status : 'warning',
-                    comments : I18nService.getMessage('commons.confirm.comments')
-                 }) {
-            this.modal.title = payload.title
-            this.modal.status = payload.status
-            this.modal.comments = payload.comments
+        confirm (payload) {
+            this.modal.title = payload.title || I18nService.getMessage('commons.confirm.title')
+            this.modal.status = payload.status || 'warning'
+            this.modal.comments = payload.comments || I18nService.getMessage('commons.confirm.comments')
             //  显示对话框
             this.modal.show = true
             return new Promise((resolve, reject) => {                

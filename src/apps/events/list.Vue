@@ -22,7 +22,8 @@
            <jq-col label="重要程度" name="tant" width="90" :formatter="starFormat"></jq-col>
            <jq-col label="发生地点" name="gbp" width="60"></jq-col>
            <jq-col label="发生时间" name="time" width="120" :formatter="dateTimeFormat"></jq-col>
-           <jq-col label="操作" name="id" width="120" :sortable="false" :formatter="actionFormat"></jq-col>
+           <jq-col label="操作" name="id" width="120" :sortable="false" :detail="false" :formatter="actionFormat">
+           </jq-col>
        </jq-grid>
        
        <modal v-model="show" @ok="show = false" ok-text="确定" cancel-text="取消">

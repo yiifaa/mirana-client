@@ -36,3 +36,15 @@
    min-height: 35px;
 }
 
+.sti-edit-page {
+    .sti-form-group {
+        .control-label {
+            text-align: right;
+            margin: 4px 0px;
+            
+            &:after {
+                content: '：'
+            }
+        }
+    }
+}

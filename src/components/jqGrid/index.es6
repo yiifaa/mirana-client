@@ -512,9 +512,10 @@ let jqGrid = {
 					this.colModel.forEach(col => {
 						if(col.detail) {
 							let name = col['label'],
-								value = rowData[col.name]
+								value = rowData[col.name],
+                                detail = col['detail']
 							items.push({
-								name, value
+								name, value, detail
 							})
 						}
 					})
@@ -701,6 +702,8 @@ let jqGrid = {
 }
 
 let jqCol = {
+    
+    template: `<span style="display:none;"><slot></slot></span>`,
 
 	props : {
 
@@ -824,9 +827,22 @@ let jqCol = {
 		this.tagName = 'JQ_COL'
 		if(this.$parent.tagName !== 'JQ_GRID') {
 			throw new Error('parent must be JQ_GRID!')
-		}
-		this.$parent.addColModel()
-	}
+		}		
+	},
+    
+    mounted () {
+        let html = this.$el.innerHTML
+        if(!!html && html.length > 1) {
+            let str = 'return \`' + html + '\`',
+                func = new Function('value', 'row', str)
+            this.formatter = function(value, row) {                
+                //  返回结果，融入值与本行的值
+                let result = func(value, row)
+                return result
+            }
+        }
+        this.$parent.addColModel()
+    }
 	
 }
 
