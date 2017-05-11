@@ -4,6 +4,8 @@ import { store } from 'xStore/xStore.es6'
 
 export default {
     
+    ECharts,
+    
     init(id) {
         let el = document.getElementById(id),
             theme = blue

@@ -286,7 +286,7 @@
                 <hr class="mt-0">
                 <ul class="horizontal-bars type-2">
                   <li>
-                    <i class="fa fa-mail-forward"></i>
+                    <i class="fa fa-mail-forward" style="color:green;"></i>
                     <span class="title">本月新增</span>
                     <span class="value">43%</span>
                     <div class="bars">
@@ -296,7 +296,7 @@
                     </div>
                   </li>
                   <li>
-                    <i class="fa fa-mail-reply"></i>
+                    <i class="fa fa-mail-reply" style="color:red;"></i>
                     <span class="title">本月失效</span>
                     <span class="value">27%</span>
                     <div class="bars">

@@ -1,5 +1,5 @@
 <template>
-    <div class="sti-list-page">
+    <div class="sti-list-page card sti-card">
         <div class="sti-list-query">
             <div class="pull-left">
                 <button class="btn btn-default">新增</button>

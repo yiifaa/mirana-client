@@ -61,7 +61,7 @@
             </div>
             <small class="text-muted">Lorem ipsum dolor sit amet enim.</small>
           </div>
-        </div>
+    </div>
       </div><!--/.col-->
       <div class="col-sm-6 col-lg-3">
         <div class="card card-inverse card-warning">

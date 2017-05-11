@@ -1,8 +1,8 @@
 <template>
-    <div class="sti-list-page card">
+    <div class="sti-list-page card sti-card">
         <div class="sti-list-query">
             <div class="pull-left">
-                <button class="btn btn-default">新增</button>
+                <button class="btn btn-default">审计</button>
             </div>
             <div class="pull-right">
                 <div class="input-group">

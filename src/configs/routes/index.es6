@@ -1,4 +1,5 @@
-// layout
+import _ from 'lodash'
+
 import sLayout from '@/sLayout.vue'
 
 // Views
@@ -11,7 +12,7 @@ import comps from './components.es6'
 import icons from './icons.es6'
 import pages from './pages.es6'
 import security from './security.es6'
-
+import trend from './trend.es6'
 
 const apps = {
     //  小屏配置
@@ -50,12 +51,11 @@ const apps = {
             icon: 'fa fa-cogs',
             name: '小组件',
             component: Widgets
-        },
-       
+        }       
     ]
 }
 
-const routes = [apps, pages]
+const routes = [apps, trend, pages]
 //  从路由中提取菜单信息
 let parse = function(options) {
     let menus = [],
@@ -87,7 +87,11 @@ let parse = function(options) {
     return menus
 }
 
-let menus = parse(apps.children)
+let appMenu = parse(apps.children),
+    trendMenu = parse(trend.children),
+    menus = _.concat(appMenu, trendMenu)
+
+
 //  导出路由与菜单
 export {
         routes,

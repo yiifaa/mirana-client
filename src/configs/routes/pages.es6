@@ -7,7 +7,7 @@ import Register from '@/views/pages/Register.vue'
 export default {
     path: '/pages',
     redirect: '/pages/404',
-    name: 'Pages',
+    name: '通用页面',
     component: {
         render(c) {
             return c('router-view')
@@ -16,22 +16,22 @@ export default {
     children: [
         {
             path: '404',
-            name: 'Page404',
+            name: '无法找到',
             component: Page404
         },
         {
             path: '500',
-            name: 'Page500',
+            name: '内部错误',
             component: Page500
         },
         {
             path: 'login',
-            name: 'Login',
+            name: '登陆页面',
             component: Login
         },
         {
             path: 'register',
-            name: 'Register',
+            name: '注册页面',
             component: Register
         }
     ]
