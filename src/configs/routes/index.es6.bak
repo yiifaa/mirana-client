@@ -37,8 +37,7 @@ const apps = {
             component: Events,
             news: false
         },
-        security
-        /**
+        security,
         comps,
         icons,        
         {
@@ -52,8 +51,7 @@ const apps = {
             icon: 'fa fa-cogs',
             name: '小组件',
             component: Widgets
-        } 
-        **/
+        }       
     ]
 }
 

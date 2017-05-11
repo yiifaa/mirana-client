@@ -6,11 +6,16 @@ export default {
     
     ECharts,
     
-    init(id) {
+    init(id, change) {
         let el = document.getElementById(id),
             theme = blue
+        /**
         if(store.state.theme !== 'blue') {
             theme = dark 
+        }
+        **/
+        if(change) {
+            theme = dark
         }
         let  chart = ECharts.init(el, theme)
         return chart

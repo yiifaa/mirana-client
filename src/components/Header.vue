@@ -7,14 +7,22 @@
         <a class="nav-link navbar-toggler sidebar-toggler" href="#" @click.prevent="sidebarMinimize">&#9776;</a>
       </li>
       <li class="nav-item px-3">
+        <!--
         <a class="nav-link" href="#" v-message="'commons.dashboard'"></a>
+        -->
+        <router-link to="/dashboard" v-message="'commons.dashboard'"></router-link>
       </li>
       <li class="nav-item px-3">
+       <router-link to="/trends/bigs">态势感知</router-link>
+       <!--
         <a class="nav-link" href="#" v-message="'commons.users'"></a>
+        -->
       </li>
+      <!--
       <li class="nav-item px-3">
         <a class="nav-link" href="#" v-message="'commons.buttons.refresh'"></a>
       </li>
+      -->
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item d-md-down-none">
