@@ -6,9 +6,9 @@
             </div>
             <div class="pull-right">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="查询分类">
+                    <input type="text" class="form-control" v-model="username" placeholder="用户名">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-primary" type="button" @click="search">
                             <i class="fa fa-search"></i>
                         </button>
                     </span>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-       <jq-grid :url="url" col-size="4" :sub-grid="true" ref="accountGrid" :on-ready="initGrid">
+       <jq-grid :url="url" col-size="4" :sub-grid="true" ref="accountGrid" :on-ready="initGrid" :query="queryParams">
            <jq-col label="用户名" name="username" width="75" :sortable="true"></jq-col>
            <jq-col label="已激活" name="enabled" width="90">
                <label class="switch switch-default switch-primary">
@@ -101,6 +101,16 @@ export default {
                                 alert($(this).prop('checked'))
                             })
                        })
+        },
+        
+        search () {
+            this.$refs.accountGrid.reload()
+        },
+        
+        queryParams () {
+            return {
+                'searchForm.username' : this.username
+            }
         }
         
     }

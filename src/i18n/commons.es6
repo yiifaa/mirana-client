@@ -1,6 +1,6 @@
 export default {
     zh: {
-        title: 'STI技术开发平台',
+        title: '上海虎特',
         dashboard: '仪表盘',
         settings: '设置',
         users: '在线用户',

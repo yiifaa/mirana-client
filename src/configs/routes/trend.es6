@@ -8,14 +8,16 @@ export default {
     name: 'Pages',
     component: xLayout,
     
-    children: [{
+    children: [
+        /**
+        {
         path: '/trends/maps',
         icon: 'icon-speedometer icon',
         //alias: '/'    
         name: '地图态势感知',
         component: Maps,
         news: true
-    }, {
+    }**/, {
         path: '/trends/bigs',
         icon: 'icon-speedometer icon',
         //alias: '/'    
