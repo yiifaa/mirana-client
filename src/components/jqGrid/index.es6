@@ -1,5 +1,8 @@
 import $ from 'jquery'
 import Vue from 'vue'
+
+import QueryService from 'services/QueryService.es6'
+
 //  注意它们的加载顺序，必须先加载国际化文件
 import 'jqGrid/js/i18n/grid.locale-cn'
 //  覆盖定义
@@ -475,7 +478,7 @@ let jqGrid = {
 					autoencode : this.encode,//转义服务器传送的数据，将HTML片段转义为普通字符串
 					mtype: this.method,//数据的请求方式
 					serializeGridData : function(postData) {
-						let queryObj = self.query()
+						let queryObj = QueryService.buildSearchForm(self.query())
 						return Object.assign(postData, queryObj);
 					}
 				})

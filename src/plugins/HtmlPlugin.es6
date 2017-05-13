@@ -34,7 +34,7 @@ export default {
             Vue.directive('disabled', {
                 
                 bind (el, binding, vnode) {
-                    let value = binding.value
+                    let value = binding.value                    
                     $(el).prop('disabled', !!value)
                 },
 
@@ -52,14 +52,15 @@ export default {
                 
                 bind (el, binding, vnode) {
                     let value = binding.value
-                    $(el).prop('required', !!value)
+                    $(el).prop('readonly', !!value)
                 },
-
-                update (el, binding) {
+                /**
+                componentUpdated (el, binding) {
+                    console.log('update', binding)
                     let value = binding.value;
                     $(el).prop('readonly', !!value)
                 }
-
+                **/
             })
      }
 }

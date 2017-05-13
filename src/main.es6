@@ -21,6 +21,8 @@ import { alert, modal } from 'components/vue-strap'
 let i18n = I18nService.init(),
     router = RouteService.init()
 
+//  安装HTML组件
+Vue.use(HtmlPlugin)
 //  格式化Http服务
 HttpService.init($)
 //  创建根组件
@@ -197,6 +199,10 @@ let AppRoot = Vue.extend({
         installUrl () {
             Vue.prototype.$url = path => {
                 return basePath + path
+            }
+            //  判断是否是编辑模式
+            Vue.prototype.$id = id => {
+                return id != '_'
             }
         }
     }

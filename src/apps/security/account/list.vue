@@ -2,7 +2,7 @@
     <div class="sti-list-page card sti-card" id="account">
         <div class="sti-list-query">
             <div class="pull-left">
-               <router-link to="/security/account/000" class="btn btn-secondary">新增</router-link>
+               <router-link to="/security/account/_" class="btn btn-secondary">新增</router-link>
             </div>
             <div class="pull-right">
                 <div class="input-group">
@@ -109,7 +109,7 @@ export default {
         
         queryParams () {
             return {
-                'searchForm.username' : this.username
+                'username' : this.username
             }
         }
         
