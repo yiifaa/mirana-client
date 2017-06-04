@@ -583,11 +583,11 @@ let jqGrid = {
 					datatype: "json",
                 jsonReader : {
                     //  存放记录位置
-                    root : "results",
+                    root : "content",
                     //  当前页数
-                    page : "currPage",
-                    total : "pages",    // 所有的页数
-                    records : "count", // 所有的记录数
+                    page : "number",
+                    total : "totalPages",    // 所有的页数
+                    records : "totalElements", // 所有的记录数
                     id : this.idField,
                     repeatitems : true//设置此元素为true,将会容许出现重复元素,但是重复的元素无法同时选中
                 },

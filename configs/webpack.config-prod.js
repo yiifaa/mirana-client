@@ -1,28 +1,26 @@
 var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
     webpack = require('webpack'),
     src = path.resolve(__dirname, '../src'),
     build = path.resolve(__dirname, '../build')
 
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].css"
+});
+
 module.exports = {
     
     entry : {
-        vendor: ['jquery'],
-        main: './src/index.es6'
+        main: './src/main.es6'
     },
-    
-    devtool: '#source-map',
-    
+        
     output : {
         filename : '[name]-[hash].js',
         publicPath: "/build/",
         path : build,
         //  umd包含了对amd、commonjs、var等多种规范的支持  
         libraryTarget : 'var'  
-    },
-    
-    devServer: {
-        inline: true    
     },
     
     module: {
@@ -52,6 +50,7 @@ module.exports = {
     },
     
     plugins: [
+         extractSass,
          new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor-[hash].min.js',

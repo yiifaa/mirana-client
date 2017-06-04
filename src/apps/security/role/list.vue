@@ -17,7 +17,7 @@
         </div>
 
        <jq-grid :url="url" col-size="3" :sub-grid="false">
-           <jq-col label="角色名称" name="name" width="75" :sortable="true"></jq-col>
+           <jq-col label="角色名称" name="username" width="75" :sortable="true"></jq-col>
            <jq-col label="优先级" name="order" width="90"></jq-col>
            <jq-col label="角色描述" name="remarks" width="90"></jq-col>
        </jq-grid>
@@ -35,7 +35,7 @@ export default {
     },
     
     data () {
-        let url = UrlService.url('app/security/role/query')
+        let url = UrlService.url('security/account/query')
         return {
             url
         }

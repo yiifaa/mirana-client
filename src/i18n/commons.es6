@@ -1,6 +1,6 @@
 export default {
     zh: {
-        title: '上海虎特',
+        title: '中测安华',
         dashboard: '仪表盘',
         settings: '设置',
         users: '在线用户',
