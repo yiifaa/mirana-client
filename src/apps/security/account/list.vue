@@ -58,7 +58,7 @@ export default {
     },
     
     data () {
-        let url = UrlService.url('app/security/account/query')
+        let url = UrlService.url('security/account/query')
         return {
             url
         }
