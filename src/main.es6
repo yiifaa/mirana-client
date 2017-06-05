@@ -2,7 +2,6 @@ import Vue from 'vue'
 import $ from 'jquery'
 
 import template from './main.html'
-import 'styles/index.scss'
 
 import HtmlPlugin from 'plugins/HtmlPlugin.es6'
 import I18nService from 'services/I18nService.es6'

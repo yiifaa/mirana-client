@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./configs/webpack.config.js",
     "demo": "node demo-server.js",
-    "dev": "webpack-dev-server --content-base ./ --config ./configs/webpack.config.js --inline --hot"
+    "dev": "webpack-dev-server --content-base ./ --config ./configs/webpack.config.js --inline --hot --port 8000",
+    "css": "node-sass styles/index.scss static/css/style.css"  
   },
   "author": "Gan Huan",
   "license": "MIT",

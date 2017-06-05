@@ -1,10 +1,4 @@
-/**
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.0-alpha.5
- * @link http://coreui.io
- * Copyright (c) 2017 creativeLabs Łukasz Holeczek
- * @license MIT
- */
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -7547,10 +7541,13 @@ base-chart.chart {
     display: inline-block;
     width: 155px;
     height: 55px;
+    line-height: 38px;
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
-    background-image: url("../img/logo.png");
+    /**
+    background-image: $navbar-brand-logo;
+      **/
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 70px auto;
@@ -7696,10 +7693,13 @@ base-chart.chart {
         padding: 0;
         margin: 0;
         overflow-y: hidden;
-        transition: max-height .3s ease-in-out; }
+        transition: max-height .3s ease-in-out;
+        /*嵌套菜单*/ }
         .sidebar .nav .nav-item ul li {
           padding: 0;
           list-style: none; }
+        .sidebar .nav .nav-item ul .nav-item .nav-link, .sidebar .nav .nav-item ul .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item ul .nav-item .dropdown-toggle {
+          padding-left: 44px; }
       .sidebar .nav .nav-item .nav-link, .sidebar .nav .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item .dropdown-toggle {
         display: block;
         padding: 0.75rem 1rem;
@@ -8913,3 +8913,36 @@ hr.transparent {
     border-right-color: #f86c6b; }
   *[dir="rtl"] .callout-success {
     border-right-color: #4dbd74; }
+
+/* 自定义样式区域 */
+/* 告警区域 */
+#app-alarms {
+  position: fixed;
+  width: 30%;
+  min-width: 350px;
+  max-width: 450px;
+  top: 67px;
+  right: 15px;
+  z-index: 999; }
+  #app-alarms .alart {
+    margin-bottom: 15px; }
+
+#aFluid {
+  padding: 0px 15px; }
+
+/**
+ * 卡片的缩进
+ */
+.sti-card {
+  padding: 15px; }
+
+/* 查询区域 */
+.sti-list-query {
+  margin-bottom: 15px;
+  min-height: 35px; }
+
+.sti-edit-page .sti-form-group .control-label {
+  text-align: right;
+  margin: 4px 0px; }
+  .sti-edit-page .sti-form-group .control-label:after {
+    content: '：'; }
