@@ -456,7 +456,7 @@ let jqGrid = {
                             //  每页数量
 							rows : "pageSize",
                             // 排序字段
-							sort : "sortColumn",
+							sort : "sd",
                             // 排序方向
 							order : "order"
 						}
